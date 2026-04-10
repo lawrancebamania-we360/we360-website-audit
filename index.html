@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We360.ai - Website Audit Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #5B45E0;
+            --light-purple: #7B61FF;
+            --dark-navy: #070127;
+            --accent-yellow: #FFB800;
+            --cream-bg: #FDFBF7;
+            --white: #FFFFFF;
+            --text-dark: #2A2A2A;
+            --text-light: #6B6B6B;
+            --border-light: #E8E5E0;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --critical: #EF4444;
+            --high: #F97316;
+            --medium: #EAB308;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--cream-bg) 0%, #FAF8F3 100%);
+            color: var(--text-dark);
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--white);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(91, 69, 224, 0.08);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-yellow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-tab {
+            padding: 12px 16px;
+            border: none;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--primary);
+            transform: scaleY(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            background: rgba(91, 69, 224, 0.08);
+            color: var(--primary);
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, rgba(91, 69, 224, 0.1) 0%, rgba(123, 97, 255, 0.05) 100%);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-tab.active::before {
+            transform: scaleY(1);
+        }
+
+        .health-widget {
+            margin-top: auto;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(91, 69, 224, 0.08) 0%, rgba(123, 97, 255, 0.05) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(91, 69, 224, 0.15);
+            text-align: center;
+            animation: slideUp 0.6s ease 0.2s both;
+        }
+
+        .health-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .health-score {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .health-out-of {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark-navy);
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px 40px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .filters {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255, 184, 0, 0.05) 0%, rgba(91, 69, 224, 0.03) 100%);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            animation: slideUp 0.6s ease;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-control {
+            padding: 10px 16px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-control:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(91, 69, 224, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            padding: 8px 14px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+        }
+
+        .task-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .task-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--light-purple) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .task-card:hover {
+            box-shadow: 0 12px 24px rgba(91, 69, 224, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .task-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .task-card.done {
+            opacity: 0.7;
+        }
+
+        .task-card.done .task-title {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .task-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .task-meta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .priority-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .priority-critical {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--critical);
+        }
+
+        .priority-high {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--high);
+        }
+
+        .priority-medium {
+            background: rgba(234, 179, 8, 0.1);
+            color: var(--medium);
+        }
+
+        .status-checkbox {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .status-checkbox:hover {
+            transform: scale(1.1);
+        }
+
+        .task-url {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: var(--primary);
+            background: rgba(91, 69, 224, 0.05);
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+
+        .task-section {
+            margin-bottom: 16px;
+        }
+
+        .task-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .task-content {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .code-block {
+            background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+            color: #10B981;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            overflow-x: auto;
+            border: 1px solid rgba(91, 69, 224, 0.15);
+            margin-bottom: 12px;
+        }
+
+        .impact-score {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            color: var(--success);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .task-team {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .team-badge {
+            padding: 4px 10px;
+            background: rgba(91, 69, 224, 0.08);
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            border: 1px solid rgba(91, 69, 224, 0.2);
+        }
+
+        .timeline {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .seo-matrix {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            animation: slideUp 0.6s ease;
+        }
+
+        .seo-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .seo-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            color: var(--white);
+            padding: 16px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .seo-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 13px;
+        }
+
+        .seo-table tr:hover {
+            background: rgba(91, 69, 224, 0.03);
+        }
+
+        .seo-check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            font-size: 16px;
+        }
+
+        .seo-check.pass {
+            color: var(--success);
+        }
+
+        .seo-check.fail {
+            color: var(--critical);
+        }
+
+        .suggestion-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            animation: slideUp 0.6s ease;
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-card:hover {
+            box-shadow: 0 12px 24px rgba(91, 69, 224, 0.15);
+            border-color: var(--primary);
+        }
+
+        .suggestion-priority {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-critical {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--critical);
+        }
+
+        .suggestion-important {
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--high);
+        }
+
+        .suggestion-nice-to-have {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3B82F6;
+        }
+
+        .suggestion-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .metric-quote {
+            background: linear-gradient(135deg, rgba(255, 184, 0, 0.05) 0%, rgba(91, 69, 224, 0.03) 100%);
+            padding: 12px;
+            border-left: 3px solid var(--accent-yellow);
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            animation: slideUp 0.6s ease;
+        }
+
+        .metric-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            box-shadow: 0 12px 24px rgba(91, 69, 224, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .metric-status {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .metric-pass {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .metric-fail {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--critical);
+        }
+
+        .webflow-recommendations {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            padding: 24px;
+            animation: slideUp 0.6s ease;
+        }
+
+        .recommendations-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+        }
+
+        .recommendation-item {
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(91, 69, 224, 0.03) 0%, rgba(123, 97, 255, 0.02) 100%);
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .ad-page-section {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            animation: slideUp 0.6s ease;
+            transition: all 0.3s ease;
+        }
+
+        .ad-page-section:hover {
+            box-shadow: 0 12px 24px rgba(91, 69, 224, 0.15);
+        }
+
+        .ad-page-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ad-page-url {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--text-light);
+            background: rgba(91, 69, 224, 0.05);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+
+        .ad-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .ad-metric {
+            background: linear-gradient(135deg, rgba(91, 69, 224, 0.05) 0%, rgba(123, 97, 255, 0.02) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(91, 69, 224, 0.1);
+            text-align: center;
+        }
+
+        .ad-metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .ad-metric-label {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .pm-recommendations {
+            background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(91, 69, 224, 0.05) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            animation: slideUp 0.6s ease;
+        }
+
+        .pm-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pm-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .pm-item {
+            padding: 12px 16px;
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .pm-item:hover {
+            background: rgba(91, 69, 224, 0.02);
+            border-color: var(--primary);
+        }
+
+        .pm-item::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .rule-book {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: slideUp 0.6s ease;
+            margin-top: 30px;
+        }
+
+        .rule-book-header {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .rule-book-header:hover {
+            transform: translateX(4px);
+        }
+
+        .toggle-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-book-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .rule-book-content.open {
+            max-height: 1000px;
+        }
+
+        .rule-list {
+            padding: 24px;
+            list-style: none;
+        }
+
+        .rule-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            display: flex;
+            gap: 12px;
+        }
+
+        .rule-item:last-child {
+            border-bottom: none;
+        }
+
+        .rule-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--light-purple) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .counter {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar { width: 240px; }
+            .content-area { padding: 20px 30px; }
+            .header { padding: 20px 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; padding: 20px; flex-direction: row; align-items: center; gap: 20px; border-right: none; border-bottom: 1px solid var(--border-light); }
+            .logo { margin-bottom: 0; }
+            .nav-tabs { flex-direction: row; gap: 4px; overflow-x: auto; flex: 1; }
+            .health-widget { margin-top: 0; margin-left: auto; }
+            .main-content { height: auto; }
+            .content-area { padding: 20px; }
+            .header { padding: 20px; flex-direction: column; gap: 16px; align-items: flex-start; }
+            .filters { flex-direction: column; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+
+        .hidden { display: none !important; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-30 { margin-bottom: 30px; }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(91, 69, 224, 0.2); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(91, 69, 224, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo"><span>We360</span><div class="logo-dot"></div></div>
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-tab="tasks">Tasks</button>
+                <button class="nav-tab" data-tab="seo">SEO Gaps</button>
+                <button class="nav-tab" data-tab="design">Design & UX</button>
+                <button class="nav-tab" data-tab="technical">Technical</button>
+                <button class="nav-tab" data-tab="ads">Ads Pages</button>
+            </nav>
+            <div class="health-widget">
+                <div class="health-label">Overall Health</div>
+                <div class="health-score"><span class="counter" data-target="42">0</span>/100</div>
+                <div class="health-out-of">Score</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1 class="header-title" id="tab-title">Action Items</h1>
+                <div class="header-meta"><span id="header-meta">Last updated: Today</span></div>
+            </div>
+
+            <div class="content-area">
+                <div id="tasks" class="tab-content active">
+                    <div class="pm-recommendations mb-30">
+                        <div class="pm-title">⚡ PM Recommendations</div>
+                        <div class="pm-list">
+                            <div class="pm-item">Add Search Console integration for keyword tracking</div>
+                            <div class="pm-item">Set up weekly automated comparison reports</div>
+                            <div class="pm-item">Create a content calendar based on SEO gaps</div>
+                            <div class="pm-item">Implement A/B testing on ad landing pages</div>
+                            <div class="pm-item">Set up conversion tracking funnels in GA4</div>
+                            <div class="pm-item">Create a design system document for brand consistency</div>
+                        </div>
+                    </div>
+
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-status-filter="all">All</button>
+                                <button class="filter-btn" data-status-filter="done">Done</button>
+                                <button class="filter-btn" data-status-filter="upcoming">Upcoming</button>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Priority</label>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-priority-filter="all">All</button>
+                                <button class="filter-btn" data-priority-filter="critical">Critical</button>
+                                <button class="filter-btn" data-priority-filter="high">High</button>
+                                <button class="filter-btn" data-priority-filter="medium">Medium</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-list" id="task-list"></div>
+                </div>
+
+                <div id="seo" class="tab-content">
+                    <div class="seo-matrix">
+                        <table class="seo-table">
+                            <thead>
+                                <tr>
+                                    <th>Page</th><th>Meta Tags</th><th>H1 Hierarchy</th><th>Canonical</th><th>OG Tags</th><th>Structured Data</th><th>Robots</th>
+                                </tr>
+                            </thead>
+                            <tbody id="seo-matrix-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="design" class="tab-content">
+                    <div class="mb-20">
+                        <div style="background: linear-gradient(135deg, rgba(255, 184, 0, 0.1) 0%, rgba(91, 69, 224, 0.05) 100%); padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent-yellow);">
+                            <strong style="color: var(--dark-navy);">Data Sources:</strong> Clarity (Last 7 days: 25,068 sessions, 1.86 pages/session, 89.86% scroll depth, 9.39% dead clicks) + GA4 (~15k active users, 30k direct sessions)
+                        </div>
+                    </div>
+                    <div id="design-suggestions"></div>
+                </div>
+
+                <div id="technical" class="tab-content">
+                    <div class="metrics-grid" id="metrics-grid"></div>
+                    <div class="webflow-recommendations">
+                        <div class="recommendations-title">Webflow-Specific Recommendations</div>
+                        <div class="recommendation-item">1. Use Webflow's "Meta Tags" panel to add missing meta descriptions. Target length: 155 characters. Avoid draft titles.</div>
+                        <div class="recommendation-item">2. In Webflow Page Settings, ensure only ONE H1 per page. Use H2/H3 for additional headings.</div>
+                        <div class="recommendation-item">3. Set canonical URLs in Webflow's SEO settings (should match the page's actual URL).</div>
+                        <div class="recommendation-item">4. Add OG tags in Webflow's Meta Tags section for social sharing optimization.</div>
+                        <div class="recommendation-item">5. Remove "noindex" robots directive from paid landing pages in Webflow SEO settings.</div>
+                        <div class="recommendation-item">6. Optimize hero images for Core Web Vitals: compress assets, use WebP format, lazy-load below-fold content.</div>
+                        <div class="recommendation-item">7. Defer JavaScript execution and minimize render-blocking resources in Webflow project settings.</div>
+                    </div>
+                </div>
+
+                <div id="ads" class="tab-content">
+                    <div id="ads-pages-container"></div>
+                </div>
+
+                <div class="rule-book" id="rule-book">
+                    <div class="rule-book-header"><span>📋 Audit Rule Book</span><span class="toggle-icon">▼</span></div>
+                    <div class="rule-book-content">
+                        <ul class="rule-list">
+                            <li class="rule-item"><span class="rule-number">1</span><span>Check all non-blog pages for meta description presence and length (target: 155 chars)</span></li>
+                            <li class="rule-item"><span class="rule-number">2</span><span>Validate H1 hierarchy — exactly 1 H1 per page, matches page topic</span></li>
+                            <li class="rule-item"><span class="rule-number">3</span><span>Check canonical URL matches actual page URL (self-referencing)</span></li>
+                            <li class="rule-item"><span class="rule-number">4</span><span>Verify OG tags completeness (og:title, og:description, og:image, og:url)</span></li>
+                            <li class="rule-item"><span class="rule-number">5</span><span>Run PageSpeed API for mobile + desktop, track Core Web Vitals</span></li>
+                            <li class="rule-item"><span class="rule-number">6</span><span>Check for noindex on pages that should be indexed (paid landing pages)</span></li>
+                            <li class="rule-item"><span class="rule-number">7</span><span>Validate all CTA buttons lead to correct destinations (no dead links)</span></li>
+                            <li class="rule-item"><span class="rule-number">8</span><span>Check title tag quality (no draft titles, no typos, no variant numbers)</span></li>
+                            <li class="rule-item"><span class="rule-number">9</span><span>Monitor Clarity dead clicks > 5% threshold (flag for UX review)</span></li>
+                            <li class="rule-item"><span class="rule-number">10</span><span>Track Core Web Vitals pass/fail status (LCP, INP, CLS)</span></li>
+                            <li class="rule-item"><span class="rule-number">11</span><span>Compare page UI against brand guidelines (color, typography, spacing)</span></li>
+                            <li class="rule-item"><span class="rule-number">12</span><span>Verify structured data presence (JSON-LD for products, articles, org info)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tasksData = [
+            {id:1,title:"Fix enterprise page title tag",url:"https://we360.ai/enterprise",priority:"critical",impact:2,status:"upcoming",implementation:"Update title in Webflow to 'Enterprise Employee Monitoring Software | We360.ai'",issue:"Title tag shows 'new > Enterprice' (typo + draft title exposed)",code:'<title>new &gt; Enterprice</title>',team:["Content"],timeline:"1 hour"},
+            {id:2,title:"Add meta description to employee monitoring page",url:"https://we360.ai/employee-monitoring-software",priority:"critical",impact:3,status:"upcoming",implementation:"Add compelling 155-char meta description in Webflow page settings",issue:"Missing meta description entirely",code:'<meta name="description" content="">',team:["SEO"],timeline:"30 mins"},
+            {id:3,title:"Remove noindex tag from landing page",url:"https://we360.ai/employee-monitoring-software-2",priority:"critical",impact:4,status:"upcoming",implementation:"Remove noindex from Webflow page settings",issue:"Has robots 'noindex' tag, Google cannot index this paid landing page",code:'<meta name="robots" content="noindex">',team:["Dev"],timeline:"15 mins"},
+            {id:4,title:"Fix H1 tag on main product page",url:"https://we360.ai/employee-monitoring-software",priority:"critical",impact:2,status:"upcoming",implementation:"Change H1 to 'Employee Monitoring Software' in Webflow",issue:"H1 tag is 'Our clients trusts us and loves us 😊' instead of page topic",code:'<h1>Our clients trusts us and loves us 😊</h1>',team:["Content"],timeline:"30 mins"},
+            {id:5,title:"Reduce multiple H1 tags to single H1",url:"https://we360.ai/employee-monitoring-software-2",priority:"critical",impact:3,status:"upcoming",implementation:"Convert extra H1s to H2/H3 in Webflow",issue:"Has 7 H1 tags (should be exactly 1)",code:'Multiple &lt;h1&gt; tags found',team:["Dev","Content"],timeline:"1 hour"},
+            {id:6,title:"Update variant landing page title",url:"https://we360.ai/employee-monitoring-software-3",priority:"critical",impact:2,status:"upcoming",implementation:"Update to professional title without variant number",issue:"Page title exposes variant number 'Employee Monitoring software 3'",code:'<title>Employee Monitoring software 3</title>',team:["Content"],timeline:"30 mins"},
+            {id:7,title:"Fix canonical URLs on industry pages",url:"https://we360.ai/industry/bpo",priority:"critical",impact:3,status:"upcoming",implementation:"Set correct self-referencing canonical URLs in Webflow",issue:"Canonical URL mismatches on industry pages (e.g., /industry/bpo)",code:'<link rel="canonical" href="wrong-url">',team:["Dev"],timeline:"2 hours"},
+            {id:8,title:"Add OG description meta tag",url:"https://we360.ai/employee-monitoring-software",priority:"high",impact:1,status:"upcoming",implementation:"Add og:description in Webflow meta tags section",issue:"Missing OG description for social sharing",code:'<meta property="og:description" content="">',team:["SEO"],timeline:"20 mins"},
+            {id:9,title:"Add OG image to variant page",url:"https://we360.ai/employee-monitoring-software-3",priority:"high",impact:1,status:"upcoming",implementation:"Add og:image in Webflow with optimized social card image",issue:"Missing OG image for social previews",code:'<meta property="og:image" content="">',team:["Design","SEO"],timeline:"45 mins"},
+            {id:10,title:"Update H1 on comparison pages",url:"https://we360.ai/alternatives/teramind",priority:"high",impact:2,status:"upcoming",implementation:"Update H1 to proper comparison headline (e.g., 'We360 vs Teramind')",issue:"H1 tags are CTA text, not comparison headlines",code:'<h1>Compare Now</h1>',team:["Content"],timeline:"1.5 hours"},
+            {id:11,title:"Remove slider numbers as H1 tags",url:"https://we360.ai/",priority:"high",impact:2,status:"upcoming",implementation:"Change slider pagination numbers from H1 to div/span",issue:"Slider numbers '1','2','3' tagged as H1",code:'<h1>1</h1> <h1>2</h1> <h1>3</h1>',team:["Dev"],timeline:"1.5 hours"},
+            {id:12,title:"Optimize Core Web Vitals on homepage",url:"https://we360.ai/",priority:"high",impact:3,status:"upcoming",implementation:"Optimize hero images, defer JS, implement lazy loading",issue:"Mobile Core Web Vitals FAILED (LCP 4.7s, CLS 0.13)",code:'LCP: 4.7s (target: &lt;2.5s) | CLS: 0.13 (target: &lt;0.1)',team:["Dev"],timeline:"4 hours"},
+            {id:13,title:"Fix dead clicks on interactive elements",url:"https://we360.ai/",priority:"high",impact:2,status:"upcoming",implementation:"Make clickable-looking elements actually clickable or change styling",issue:"Dead clicks at 9.39% (2,355 sessions in 7 days per Clarity)",code:'Clarity Data: 9.39% dead click rate',team:["Design"],timeline:"3 hours"},
+            {id:14,title:"Add JSON-LD structured data",url:"https://we360.ai/",priority:"medium",impact:1,status:"upcoming",implementation:"Add Organization, Product, and LocalBusiness structured data",issue:"Missing JSON-LD structured data for enhanced search results",code:'&lt;script type="application/ld+json"&gt;{}&lt;/script&gt;',team:["Dev"],timeline:"2 hours"},
+            {id:15,title:"Add OG URL tags",url:"https://we360.ai/",priority:"medium",impact:1,status:"upcoming",implementation:"Add og:url to all pages in Webflow meta settings",issue:"Missing og:url on multiple pages",code:'<meta property="og:url" content="">',team:["SEO"],timeline:"1.5 hours"},
+            {id:16,title:"Standardize button styles across site",url:"https://we360.ai/",priority:"medium",impact:1,status:"upcoming",implementation:"Create Webflow button components with consistent styling",issue:"Inconsistent button styles (color, size, padding) across pages",code:'Multiple button style variations detected',team:["Design"],timeline:"3 hours"},
+            {id:17,title:"Add image alt text",url:"https://we360.ai/employee-monitoring-software",priority:"medium",impact:1,status:"upcoming",implementation:"Add descriptive alt text to all product/feature images",issue:"Several product images missing alt text for accessibility",code:'<img src="feature.png" alt="">',team:["Design","Content"],timeline:"2 hours"},
+            {id:18,title:"Improve mobile navigation spacing",url:"https://we360.ai/",priority:"medium",impact:1,status:"upcoming",implementation:"Increase touch target sizes to 48px minimum, improve spacing",issue:"Mobile navigation items too close together (accessibility concern)",code:'Touch targets below 48px minimum',team:["Design"],timeline:"2.5 hours"},
+            {id:19,title:"Add breadcrumb navigation",url:"https://we360.ai/alternatives/",priority:"medium",impact:1,status:"upcoming",implementation:"Add breadcrumb structured data and UI component",issue:"Comparison pages lack breadcrumb navigation",code:'<div class="breadcrumbs"></div>',team:["Dev","Content"],timeline:"1.5 hours"},
+            {id:20,title:"Optimize CTA button contrast",url:"https://we360.ai/",priority:"medium",impact:1,status:"upcoming",implementation:"Ensure CTA buttons meet WCAG AAA contrast requirements",issue:"Some CTA buttons fail WCAG color contrast checks",code:'Contrast ratio: 3.5:1 (target: 4.5:1)',team:["Design"],timeline:"1 hour"}
+        ];
+
+        const seoGapsData = {pages:["Enterprise","EMS Main","EMS Variant 2","EMS Variant 3","BPO Industry","IT Industry"],seoElements:[{name:"Meta Description",key:"metaDescription"},{name:"H1 Quality",key:"h1Quality"},{name:"Canonical URL",key:"canonical"},{name:"OG Tags",key:"ogTags"},{name:"Structured Data",key:"structuredData"},{name:"Robots Meta",key:"robots"}],matrix:{"Enterprise":{metaDescription:false,h1Quality:false,canonical:true,ogTags:false,structuredData:false,robots:true},"EMS Main":{metaDescription:false,h1Quality:false,canonical:true,ogTags:false,structuredData:false,robots:true},"EMS Variant 2":{metaDescription:false,h1Quality:false,canonical:true,ogTags:false,structuredData:false,robots:false},"EMS Variant 3":{metaDescription:true,h1Quality:false,canonical:true,ogTags:false,structuredData:false,robots:true},"BPO Industry":{metaDescription:false,h1Quality:true,canonical:false,ogTags:false,structuredData:false,robots:true},"IT Industry":{metaDescription:false,h1Quality:true,canonical:false,ogTags:false,structuredData:false,robots:true}}};
+
+        const designSuggestionsData=[{title:"Add hover states to all interactive elements",priority:"critical",metric:"Clarity: 9.39% dead clicks (2,355 sessions) indicate unclear interactive areas",timeline:"Designer: 3-4 hours"},{title:"Improve hero image mobile responsiveness",priority:"critical",metric:"Mobile LCP is 4.7s — hero images taking too long to load. Optimize for mobile-first.",timeline:"Designer: 2-3 hours"},{title:"Standardize button sizing and spacing",priority:"important",metric:"Design inconsistency reduces user confidence. GA4: 118k homepage views need consistent CTAs.",timeline:"Designer: 2 hours"},{title:"Redesign slider pagination",priority:"important",metric:"Slider numbers currently marked as H1 (SEO issue). Visual redesign needed for clarity.",timeline:"Designer: 1.5 hours"},{title:"Increase mobile touch target sizes",priority:"important",metric:"Clarity: 89.86% scroll depth, but touch targets may be too small (accessibility concern).",timeline:"Designer: 1.5-2 hours"},{title:"Add visual feedback to form inputs",priority:"nice-to-have",metric:"User testing: form fields lack clear focus states. Improves perceived responsiveness.",timeline:"Designer: 1 hour"},{title:"Implement micro-interactions on CTA hover",priority:"nice-to-have",metric:"Design polish: subtle animations increase perceived quality and engagement.",timeline:"Designer: 1.5 hours"},{title:"Create loading state for async operations",priority:"nice-to-have",metric:"UX improvement: users need visual feedback during page transitions and data loads.",timeline:"Designer: 1.5 hours"}];
+
+        const technicalMetrics=[{label:"LCP (Largest Contentful Paint)",value:"4.7s",status:"fail",target:"< 2.5s"},{label:"INP (Interaction to Next Paint)",value:"120ms",status:"pass",target:"< 200ms"},{label:"CLS (Cumulative Layout Shift)",value:"0.13",status:"fail",target:"< 0.1"},{label:"FCP (First Contentful Paint)",value:"1.8s",status:"pass",target:"< 1.8s"},{label:"TTFB (Time to First Byte)",value:"0.6s",status:"pass",target:"< 0.8s"}];
+
+        const adsPageData=[{title:"Employee Monitoring Software",url:"https://we360.ai/employee-monitoring-software",visits:305,days:"3 days",clarity:{visits:305,avgTime:1.2,scrollDepth:85},seoIssues:["Missing meta description","Wrong H1 ('Our clients trusts us and loves us 😊')","Missing OG description"],images:28,altTextMissing:8,ctas:["Get Demo","Start Free Trial"]},{title:"Employee Monitoring Software (Variant 2)",url:"https://we360.ai/employee-monitoring-software-2",visits:988,days:"3 days",clarity:{visits:988,avgTime:1.5,scrollDepth:92},seoIssues:["robots: noindex (CRITICAL — page cannot be indexed)","Missing meta description","7 H1 tags (should be 1)","Missing OG tags"],images:32,altTextMissing:6,ctas:["Schedule Demo","Get Started Free"]},{title:"Employee Monitoring Software (Variant 3)",url:"https://we360.ai/employee-monitoring-software-3",visits:142,days:"3 days (low traffic)",clarity:{visits:142,avgTime:0.9,scrollDepth:78},seoIssues:["Title exposes variant number 'Employee Monitoring software 3'","Missing OG image","Missing OG URL","Multiple H1 tags"],images:26,altTextMissing:5,ctas:["Book Demo","Free Trial"]}];
+
+        function renderTasks(){const taskList=document.getElementById('task-list');taskList.innerHTML='';const filteredTasks=filterTasks();filteredTasks.forEach(task=>{const taskCard=document.createElement('div');taskCard.className=`task-card ${task.status==='done'?'done':''}`;taskCard.innerHTML=`<div class="task-header"><h3 class="task-title">${task.title}</h3><div class="task-meta"><span class="priority-badge priority-${task.priority}">${task.priority}</span><input type="checkbox" class="status-checkbox" data-task-id="${task.id}" ${task.status==='done'?'checked':''}></div></div>${task.url?`<div class="task-url">${task.url}</div>`:''}<div class="task-section"><div class="task-section-title">Issue</div><div class="task-content">${task.issue}</div></div><div class="task-section"><div class="task-section-title">Code Snapshot</div><div class="code-block">${task.code}</div></div><div class="task-section"><div class="task-section-title">Implementation</div><div class="task-content">${task.implementation}</div></div><div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;"><span class="impact-score">Impact: +${task.impact} points</span><div class="task-team">${task.team.map(t=>`<span class="team-badge">${t}</span>`).join('')}</div></div><div class="timeline">⏱️ Timeline: ${task.timeline}</div>`;const checkbox=taskCard.querySelector('.status-checkbox');checkbox.addEventListener('change',(e)=>{task.status=e.target.checked?'done':'upcoming';saveTaskState();updateHealthScore();renderTasks();});taskList.appendChild(taskCard);});}
+
+        function filterTasks(){const statusFilter=document.querySelector('.filter-btn[data-status-filter].active')?.dataset.statusFilter||'all';const priorityFilter=document.querySelector('.filter-btn[data-priority-filter].active')?.dataset.priorityFilter||'all';return tasksData.filter(task=>{const statusMatch=statusFilter==='all'||task.status===statusFilter;const priorityMatch=priorityFilter==='all'||task.priority===priorityFilter;return statusMatch&&priorityMatch;});}
+
+        function renderSeoGaps(){const tbody=document.getElementById('seo-matrix-body');tbody.innerHTML='';seoGapsData.pages.forEach(page=>{const row=document.createElement('tr');const pageData=seoGapsData.matrix[page];let html=`<td><strong>${page}</strong></td>`;seoGapsData.seoElements.forEach(element=>{const isPassing=pageData[element.key];html+=`<td><div class="seo-check ${isPassing?'pass':'fail'}">${isPassing?'✓':'✕'}</div></td>`;});row.innerHTML=html;tbody.appendChild(row);});}
+
+        function renderDesignSuggestions(){const container=document.getElementById('design-suggestions');container.innerHTML='';designSuggestionsData.forEach(suggestion=>{const card=document.createElement('div');card.className='suggestion-card';card.innerHTML=`<div class="suggestion-priority suggestion-${suggestion.priority.toLowerCase()}">${suggestion.priority}</div><div class="suggestion-title">${suggestion.title}</div><div class="metric-quote">"${suggestion.metric}"</div><div class="task-content" style="font-size: 12px; color: var(--text-light);">${suggestion.timeline}</div>`;container.appendChild(card);});}
+
+        function renderTechnicalMetrics(){const grid=document.getElementById('metrics-grid');grid.innerHTML='';technicalMetrics.forEach(metric=>{const card=document.createElement('div');card.className='metric-card';card.innerHTML=`<div class="metric-label">${metric.label}</div><div class="metric-value">${metric.value}</div><div class="metric-status metric-${metric.status}">${metric.status==='pass'?'✓ PASS':'✕ FAILED'} (${metric.target})</div>`;grid.appendChild(card);});}
+
+        function renderAdsPages(){const container=document.getElementById('ads-pages-container');container.innerHTML='';adsPageData.forEach((page,idx)=>{const section=document.createElement('div');section.className='ad-page-section';section.innerHTML=`<div class="ad-page-title"><span>${idx+1}. ${page.title}</span><span style="font-size: 12px; margin-left: auto; color: var(--text-light); font-weight: 400;">Traffic: ${page.visits===988?'🔥 HIGHEST':'📊'}</span></div><div class="ad-page-url">${page.url}</div><div style="margin-bottom: 20px;"><div class="task-section-title">Traffic Metrics (Last 3 days)</div><div class="ad-metrics"><div class="ad-metric"><div class="ad-metric-value">${page.visits}</div><div class="ad-metric-label">Page Visits</div></div><div class="ad-metric"><div class="ad-metric-value">${page.clarity.avgTime}m</div><div class="ad-metric-label">Avg Time on Page</div></div><div class="ad-metric"><div class="ad-metric-value">${page.clarity.scrollDepth}%</div><div class="ad-metric-label">Scroll Depth</div></div></div></div><div style="margin-bottom: 20px;"><div class="task-section-title">SEO Issues</div><div class="task-content">${page.seoIssues.map(issue=>`<div style="margin-bottom: 8px;">• ${issue}</div>`).join('')}</div></div><div style="margin-bottom: 20px;"><div class="task-section-title">Content Analysis</div><div class="task-content">${page.images} images • ${page.altTextMissing} missing alt text • ${page.ctas.length} CTAs: ${page.ctas.join(', ')}</div></div><div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(249, 115, 22, 0.05) 100%); padding: 16px; border-radius: 8px; border-left: 3px solid var(--critical);"><div class="task-section-title" style="color: var(--critical);">🎯 PM Recommendation</div><div class="task-content" style="font-size: 13px;">${idx===1?'URGENT: This is the HIGHEST traffic ad page (988 visits) but has robots: noindex — Google cannot index it! Remove noindex immediately and add proper meta tags. This page alone could add 4+ points to health score.':idx===0?'Fix H1 tag and add meta description (impact: +3 points). Review image optimization for load time.':'Low traffic variant — consider consolidating with main page or improving copy/CTA to increase conversions.'}</div></div>`;container.appendChild(section);});}
+
+        function saveTaskState(){const state=tasksData.map(task=>({id:task.id,status:task.status}));localStorage.setItem('taskState',JSON.stringify(state));}
+
+        function loadTaskState(){const saved=localStorage.getItem('taskState');if(saved){const state=JSON.parse(saved);state.forEach(savedTask=>{const task=tasksData.find(t=>t.id===savedTask.id);if(task)task.status=savedTask.status;});}}
+
+        function updateHealthScore(){const doneTasks=tasksData.filter(t=>t.status==='done');const totalImpact=doneTasks.reduce((sum,t)=>sum+t.impact,0);const baseScore=42;const newScore=Math.min(100,baseScore+totalImpact);animateCounter(document.querySelector('.counter'),newScore);}
+
+        function animateCounter(element,target){const duration=600;const start=parseInt(element.textContent)||0;const startTime=Date.now();function update(){const elapsed=Date.now()-startTime;const progress=Math.min(elapsed/duration,1);const value=Math.floor(start+(target-start)*progress);element.textContent=value;if(progress<1){requestAnimationFrame(update);}}update();}
+
+        function switchTab(tabName){document.querySelectorAll('.tab-content').forEach(tab=>tab.classList.remove('active'));document.getElementById(tabName).classList.add('active');document.querySelectorAll('.nav-tab').forEach(tab=>tab.classList.remove('active'));document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');const titles={tasks:'Action Items',seo:'SEO Gaps',design:'Design & UX',technical:'Technical Performance',ads:'Ads Pages'};document.getElementById('tab-title').textContent=titles[tabName];}
+
+        function setupFilters(){document.querySelectorAll('[data-status-filter]').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('[data-status-filter]').forEach(b=>b.classList.remove('active'));this.classList.add('active');renderTasks();});});document.querySelectorAll('[data-priority-filter]').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('[data-priority-filter]').forEach(b=>b.classList.remove('active'));this.classList.add('active');renderTasks();});});}
+
+        function setupRuleBook(){const header=document.getElementById('rule-book')?.querySelector('.rule-book-header');if(!header)return;header.addEventListener('click',function(){const content=document.getElementById('rule-book')?.querySelector('.rule-book-content');if(content){content.classList.toggle('open');const icon=this.querySelector('.toggle-icon');icon.style.transform=content.classList.contains('open')?'rotate(180deg)':'rotate(0deg)';}});}
+
+        document.addEventListener('DOMContentLoaded',function(){loadTaskState();renderTasks();renderSeoGaps();renderDesignSuggestions();renderTechnicalMetrics();renderAdsPages();setupFilters();setupRuleBook();updateHealthScore();document.querySelectorAll('.nav-tab').forEach(tab=>{tab.addEventListener('click',function(){switchTab(this.dataset.tab);});});const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.animation='slideUp 0.6s ease forwards';}});},{threshold:0.1});document.querySelectorAll('.task-card, .suggestion-card, .metric-card').forEach(el=>{observer.observe(el);});});
+    </script>
+</body>
+</html>
