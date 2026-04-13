@@ -1,0 +1,17 @@
+name: Notify Marketing HQ
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger HQ sync
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.HQ_DEPLOY_TOKEN }}" \
+            https://api.github.com/repos/zenstackadmin/marketing-agent-hq/dispatches \
+            -d '{"event_type":"lawrence-update","client_payload":{"commit":"${{ github.sha }}","message":"${{ github.event.head_commit.message }}"}}'
