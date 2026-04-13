@@ -1229,7 +1229,7 @@ const integrationsData = [
   {
     icon:"📈", name:"Google Analytics 4", siteStatus:"installed", dashStatus:"connected",
     desc:"Organic traffic trends, landing pages, user sessions by channel",
-    lastCheck:"⚡ Connected — verified Apr 13, 2026",
+    lastCheck:"⚡ Connected via Stape MCP",
     steps:[
       {n:1, text:"Go to <strong>Google Cloud Console</strong> → IAM & Admin → Service Accounts → Create"},
       {n:2, text:"Enable <strong>Google Analytics Data API</strong> in API Library"},
@@ -1275,6 +1275,7 @@ const integrationsData = [
     ],
     docUrl:"https://developers.google.com/speed/docs/insights/v5/get-started"
   },
+
 ];
 
 const contentData = [
@@ -1313,7 +1314,7 @@ const alertsData = [
   {type:"critical",title:"JS errors killing conversions on paid page",desc:"Clarity found 'hbspt is not defined' and 'webflowLightBox is not a function' errors on /employee-monitoring-software-2. 4,206 dead clicks in 30 days.",action:"Fix HubSpot script references + Webflow lightbox"},
   {type:"critical",title:"Mobile Core Web Vitals failing",desc:"LCP 4.7s (target <2.5s), TBT 890ms (target <200ms), CLS 0.13 (target <0.1). Mobile score: 38/100. Affects 60%+ of traffic.",action:"Optimize images + defer third-party scripts"},
   {type:"critical",title:"21.5% scroll depth on ad landing page",desc:"/employee-monitoring-software-2 gets 6,667 sessions but users see only top 1/5 of page. 41.4% bounce rate. Paid budget wasted.",action:"Redesign above-the-fold + add sticky CTA"},
-  {type:"warn",title:"Organic traffic critically low",desc:"GA4 28-day (Apr 13): 10,937 organic sessions. Paid (5,868) lower, but direct (100,978) dominates — mostly app users. Marketing site organic target: 50K/month. Need ~5x growth.",action:"Execute content + technical SEO roadmap"},
+  {type:"warn",title:"Organic traffic critically low",desc:"Only 2,057 organic sessions/month from Google. Paid (7,743) is 3.7x organic. Target: 100K organic. Need 48x growth.",action:"Execute content + technical SEO roadmap"},
   {type:"warn",title:"Zero AI search optimization",desc:"No llms.txt, no quotable passages, no AEO-optimized pages. AI search converts at 15.9% vs Google 1.76%. Missing massive opportunity.",action:"Create llms.txt + optimize top pages for AI citation"},
   {type:"warn",title:"GSC ownership not confirmed",desc:"Google Search Console property exists but ownership is unverified. Missing critical ranking and indexing data.",action:"Verify via DNS or HTML tag"},
   {type:"critical",title:"/time-tracking-software 404 — 9,900/mo keyword target missing",desc:"Live audit Apr 13: /time-tracking-software returns HTTP 404. Target URL for 'employee time tracking software' (9,900 monthly searches). All organic and paid traffic to this URL lost with no redirect.",action:"Recreate page in Webflow OR add 301 redirect to /employee-monitoring-software"},
@@ -1762,8 +1763,7 @@ const blogTopicsData = [
     competitorRef:["HBR article on surveillance at work","MIT Sloan management research"],
     writerNotes:"This is a trust-building piece. Acknowledge the real concerns. Show that We360.ai is built with employee well-being in mind.",
     addedDate:"Apr 12, 2026", dueDate:"May 15, 2026", completedDate:null},
-
-  // ── NEW BLOG TOPICS FROM PAA KEYWORD DISCOVERY (Apr 13, 2026) ──────────
+  // ── NEW BLOG TOPICS FROM PAA KEYWORD DISCOVERY (Apr 13, 2026) ────────────
   {id:21, title:"Can Your Employer Tell If You're Being Monitored? Signs & Facts", targetKeyword:"can I tell if my employer is monitoring my computer", secondaryKeywords:["how to know if employer is monitoring","signs of computer monitoring at work"], searchIntent:"informational", priority:"high", estWords:2000, status:"Idea",
     h1:"Can You Tell If Your Employer Is Monitoring Your Computer? Here's What to Look For",
     h2s:["Common Signs of Employee Monitoring","Types of Monitoring Software","What Employers Can Legally Track","How to Check If You're Being Monitored","What to Do If You Find Monitoring Software"],
@@ -1774,7 +1774,6 @@ const blogTopicsData = [
     competitorRef:["Teramind transparency guide","ActivTrak employee communication template"],
     writerNotes:"Employee-side content — builds trust by being honest. Position We360.ai as the 'transparent monitoring' solution. High PAA opportunity score (8). Zero competition (allintitle: 0).",
     addedDate:"Apr 13, 2026", dueDate:"Apr 25, 2026", completedDate:null},
-
   {id:22, title:"How to See What Employees Are Doing on Their Computers (Ethically)", targetKeyword:"how can I see what my employees are doing on their computers", secondaryKeywords:["track employee computer activity","monitor employee screen time"], searchIntent:"commercial", priority:"high", estWords:2200, status:"Idea",
     h1:"How to See What Your Employees Are Doing on Their Computers — The Ethical Way",
     h2s:["Why Employers Want Visibility","Legal Considerations Before You Start","Methods to Track Computer Activity","Setting Up Employee Monitoring","Best Practices for Ethical Monitoring"],
@@ -1785,7 +1784,6 @@ const blogTopicsData = [
     competitorRef:["Hubstaff employer guide","Time Doctor monitoring features"],
     writerNotes:"Employer-side conversion content. Focus on ethical framing — not surveillance. Include a step-by-step We360.ai setup walkthrough. PAA score: 8, allintitle: 0.",
     addedDate:"Apr 13, 2026", dueDate:"Apr 27, 2026", completedDate:null},
-
   {id:23, title:"Is Remote Work Going Away in 2026? Data Says Otherwise", targetKeyword:"is remote work going away in 2026", secondaryKeywords:["future of remote work 2026","will companies bring employees back to office"], searchIntent:"informational", priority:"medium", estWords:2000, status:"Idea",
     h1:"Is Remote Work Going Away in 2026? What the Data Actually Shows",
     h2s:["The Return-to-Office Headlines vs Reality","2026 Remote Work Statistics","Industries Still Going Remote","Why Hybrid is Winning","How to Make Remote Work Actually Work"],
@@ -1796,7 +1794,6 @@ const blogTopicsData = [
     competitorRef:["McKinsey remote work report","Buffer State of Remote Work 2026"],
     writerNotes:"Trending topic — high search volume in Q1/Q2 2026. Take a balanced stance. Link to We360.ai remote monitoring features. PAA score: 8, zero competition.",
     addedDate:"Apr 13, 2026", dueDate:"May 2, 2026", completedDate:null},
-
   {id:24, title:"What Does a Workforce Analyst Do? Role, Skills & Career Path", targetKeyword:"what does a workforce analyst do", secondaryKeywords:["workforce analyst job description","workforce analytics career"], searchIntent:"informational", priority:"medium", estWords:1800, status:"Idea",
     h1:"What Does a Workforce Analyst Do? Complete Role Guide for 2026",
     h2s:["Workforce Analyst Role Overview","Key Responsibilities","Essential Skills and Tools","Career Path and Salary","How We360.ai Supports Workforce Analysts"],
@@ -1807,7 +1804,6 @@ const blogTopicsData = [
     competitorRef:["LinkedIn workforce analyst job postings","Glassdoor salary data"],
     writerNotes:"Top-of-funnel educational content targeting people researching this career. Position We360.ai as the tool these professionals use. PAA score: 8, allintitle: 0.",
     addedDate:"Apr 13, 2026", dueDate:"May 5, 2026", completedDate:null},
-
   {id:25, title:"Is Remote Employee Productivity Monitoring Worth It? ROI Breakdown", targetKeyword:"is remote employee productivity worth it", secondaryKeywords:["remote monitoring ROI","remote employee productivity tracking cost"], searchIntent:"commercial", priority:"high", estWords:2200, status:"Idea",
     h1:"Is Remote Employee Productivity Monitoring Worth It? A Data-Driven ROI Analysis",
     h2s:["The Cost of Unmonitored Remote Work","Measuring Remote Productivity ROI","Real Numbers: Before vs After Monitoring","Common Objections Addressed","How to Get Started Without Breaking Trust"],
@@ -2693,25 +2689,241 @@ const kwClusters = ['All','Core Product','Remote Work','Workforce Analytics','Ti
 
 const keywordsData = [
   // CORE PRODUCT
-  {id:1,keyword:'employee monitoring software',cluster:'Core Product',searchVolume:8100,kd:62,currentRank:50,targetRank:3,currentTraffic:0,potentialTraffic:1100,intent:'commercial',priority:'high',page:'/employee-monitoring-software',trend:'stable',lastChecked:'Apr 13, 2026'},
+  {id:1,keyword:'employee monitoring software',cluster:'Core Product',searchVolume:8100,kd:62,currentRank:14,targetRank:3,currentTraffic:210,potentialTraffic:1100,intent:'commercial',priority:'high',page:'/employee-monitoring-software',trend:'up',lastChecked:'Apr 12, 2026'},
   {id:2,keyword:'employee tracking software',cluster:'Core Product',searchVolume:5400,kd:58,currentRank:22,targetRank:5,currentTraffic:85,potentialTraffic:720,intent:'commercial',priority:'high',page:'/employee-tracking-software',trend:'stable',lastChecked:'Apr 12, 2026'},
   {id:3,keyword:'staff monitoring software',cluster:'Core Product',searchVolume:2900,kd:48,currentRank:31,targetRank:5,currentTraffic:28,potentialTraffic:390,intent:'commercial',priority:'high',page:'/employee-monitoring-software',trend:'up',lastChecked:'Apr 12, 2026'},
   {id:4,keyword:'employee activity monitoring',cluster:'Core Product',searchVolume:1900,kd:44,currentRank:18,targetRank:5,currentTraffic:42,potentialTraffic:255,intent:'commercial',priority:'medium',page:'/employee-monitoring-software',trend:'stable',lastChecked:'Apr 12, 2026'},
   {id:5,keyword:'employee computer monitoring software',cluster:'Core Product',searchVolume:1600,kd:40,currentRank:9,targetRank:3,currentTraffic:95,potentialTraffic:210,intent:'commercial',priority:'high',page:'/employee-monitoring-software',trend:'up',lastChecked:'Apr 12, 2026'},
   // REMOTE WORK
-  {id:6,keyword:'remote employee monitoring software',cluster:'Remote Work',searchVolume:4400,kd:52,currentRank:50,targetRank:3,currentTraffic:0,potentialTraffic:590,intent:'commercial',priority:'high',page:'/remote-employee-monitoring',trend:'stable',lastChecked:'Apr 13, 2026'},
-  {id:7,keyword:'work from home monitoring software',cluster:'Remote Work',searchVolume:3600,kd:45,currentRank:50,targetRank:2,currentTraffic:0,potentialTraffic:480,intent:'commercial',priority:'high',page:'/remote-employee-monitoring',trend:'stable',lastChecked:'Apr 13, 2026'},
+  {id:6,keyword:'remote employee monitoring software',cluster:'Remote Work',searchVolume:4400,kd:52,currentRank:11,targetRank:3,currentTraffic:180,potentialTraffic:590,intent:'commercial',priority:'high',page:'/remote-employee-monitoring',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:7,keyword:'work from home monitoring software',cluster:'Remote Work',searchVolume:3600,kd:45,currentRank:7,targetRank:2,currentTraffic:240,potentialTraffic:480,intent:'commercial',priority:'high',page:'/remote-employee-monitoring',trend:'up',lastChecked:'Apr 12, 2026'},
   {id:8,keyword:'remote team productivity tracking',cluster:'Remote Work',searchVolume:2100,kd:38,currentRank:24,targetRank:5,currentTraffic:30,potentialTraffic:280,intent:'commercial',priority:'medium',page:'/remote-employee-monitoring',trend:'stable',lastChecked:'Apr 12, 2026'},
   {id:9,keyword:'monitor remote employees',cluster:'Remote Work',searchVolume:1800,kd:41,currentRank:16,targetRank:5,currentTraffic:48,potentialTraffic:242,intent:'commercial',priority:'medium',page:'/remote-employee-monitoring',trend:'stable',lastChecked:'Apr 12, 2026'},
   // WORKFORCE ANALYTICS
-  {id:10,keyword:'workforce analytics software',cluster:'Workforce Analytics',searchVolume:3200,kd:55,currentRank:50,targetRank:5,currentTraffic:0,potentialTraffic:428,intent:'commercial',priority:'high',page:'/workforce-analytics',trend:'stable',lastChecked:'Apr 13, 2026'},
-  {id:11,keyword:'employee productivity analytics',cluster:'Workforce Analytics',searchVolume:2400,kd:42,currentRank:50,targetRank:3,currentTraffic:0,potentialTraffic:320,intent:'commercial',priority:'high',page:'/workforce-analytics',trend:'stable',lastChecked:'Apr 13, 2026'},
+  {id:10,keyword:'workforce analytics software',cluster:'Workforce Analytics',searchVolume:3200,kd:55,currentRank:19,targetRank:5,currentTraffic:62,potentialTraffic:428,intent:'commercial',priority:'high',page:'/workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:11,keyword:'employee productivity analytics',cluster:'Workforce Analytics',searchVolume:2400,kd:42,currentRank:13,targetRank:3,currentTraffic:95,potentialTraffic:320,intent:'commercial',priority:'high',page:'/workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
   {id:12,keyword:'workforce management analytics',cluster:'Workforce Analytics',searchVolume:1700,kd:50,currentRank:28,targetRank:5,currentTraffic:22,potentialTraffic:228,intent:'commercial',priority:'medium',page:'/workforce-analytics',trend:'stable',lastChecked:'Apr 12, 2026'},
   {id:13,keyword:'employee performance monitoring software',cluster:'Workforce Analytics',searchVolume:2800,kd:47,currentRank:15,targetRank:5,currentTraffic:78,potentialTraffic:374,intent:'commercial',priority:'high',page:'/workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
   // TIME & ATTENDANCE
-  {id:14,keyword:'employee time tracking software',cluster:'Time & Attendance',searchVolume:9900,kd:68,currentRank:50,targetRank:10,currentTraffic:0,potentialTraffic:890,intent:'commercial',priority:'high',page:'/time-tracking',trend:'stable',lastChecked:'Apr 13, 2026'},
-  {id:15,keyword:'attendance management software',cluster:'Time & Attendance',searchVolume:4800,kd:55,currentRank:50,targetRank:5,currentTraffic:0,potentialTraffic:642,intent:'commercial',priority:'high',page:'/time-tracking',trend:'stable',lastChecked:'Apr 13, 2026'},
-  {id:16,keyword:'employee attendance tracking',cluster:'Time & Attendance',searchVolume:3500,kd:48,currentRank:50,targetRank:3,currentTraffic:0,potentialTraffic:468,intent:'commercial',priority:'high',page:'/time-tracking',trend:'stable',lastChecked:'Apr 13, 2026'},
+  {id:14,keyword:'employee time tracking software',cluster:'Time & Attendance',searchVolume:9900,kd:68,currentRank:35,targetRank:10,currentTraffic:95,potentialTraffic:890,intent:'commercial',priority:'high',page:'/time-tracking',trend:'stable',lastChecked:'Apr 12, 2026'},
+  {id:15,keyword:'attendance management software',cluster:'Time & Attendance',searchVolume:4800,kd:55,currentRank:21,targetRank:5,currentTraffic:88,potentialTraffic:642,intent:'commercial',priority:'high',page:'/time-tracking',trend:'stable',lastChecked:'Apr 12, 2026'},
+  {id:16,keyword:'employee attendance tracking',cluster:'Time & Attendance',searchVolume:3500,kd:48,currentRank:12,targetRank:3,currentTraffic:142,potentialTraffic:468,intent:'commercial',priority:'high',page:'/time-tracking',trend:'up',lastChecked:'Apr 12, 2026'},
   {id:17,keyword:'online attendance system',cluster:'Time & Attendance',searchVolume:2200,kd:40,currentRank:8,targetRank:2,currentTraffic:158,potentialTraffic:295,intent:'commercial',priority:'medium',page:'/time-tracking',trend:'stable',lastChecked:'Apr 12, 2026'},
   // COMPETITOR GAP
-  {id:18,keyword:'hubstaff alternative',cluster:'Competitor Gap',searchVolume:2900,kd:35,currentRank:50,targetRank:5,currentTraffic:0,potentialTraffic:388,intent:'commercial',priority:'high',page:'/hubstaff-alternative',trend:'stable',lastChecked:'Apr 1
+  {id:18,keyword:'hubstaff alternative',cluster:'Competitor Gap',searchVolume:2900,kd:35,currentRank:42,targetRank:5,currentTraffic:12,potentialTraffic:388,intent:'commercial',priority:'high',page:'/hubstaff-alternative',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:19,keyword:'teramind alternative',cluster:'Competitor Gap',searchVolume:1800,kd:32,currentRank:38,targetRank:5,currentTraffic:14,potentialTraffic:242,intent:'commercial',priority:'high',page:'/teramind-alternative',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:20,keyword:'activtrak alternative',cluster:'Competitor Gap',searchVolume:1600,kd:30,currentRank:45,targetRank:5,currentTraffic:8,potentialTraffic:214,intent:'commercial',priority:'high',page:'/activtrak-alternative',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:21,keyword:'time doctor alternative',cluster:'Competitor Gap',searchVolume:2100,kd:33,currentRank:50,targetRank:5,currentTraffic:7,potentialTraffic:282,intent:'commercial',priority:'high',page:'/time-doctor-alternative',trend:'stable',lastChecked:'Apr 12, 2026'},
+  // AI / FUTURE
+  {id:22,keyword:'AI workforce analytics',cluster:'AI / Future',searchVolume:1400,kd:28,currentRank:6,targetRank:1,currentTraffic:112,potentialTraffic:280,intent:'informational',priority:'medium',page:'/ai-workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:23,keyword:'AI employee monitoring',cluster:'AI / Future',searchVolume:1100,kd:25,currentRank:4,targetRank:1,currentTraffic:148,potentialTraffic:220,intent:'informational',priority:'medium',page:'/ai-workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:24,keyword:'employee monitoring software with AI',cluster:'AI / Future',searchVolume:880,kd:22,currentRank:3,targetRank:1,currentTraffic:132,potentialTraffic:176,intent:'commercial',priority:'medium',page:'/ai-workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
+  {id:25,keyword:'predictive workforce analytics',cluster:'AI / Future',searchVolume:720,kd:20,currentRank:8,targetRank:2,currentTraffic:52,potentialTraffic:144,intent:'informational',priority:'low',page:'/ai-workforce-analytics',trend:'up',lastChecked:'Apr 12, 2026'},
+];
+
+let kwActiveCluster = 'All';
+let kwSortKey = 'priority';
+let kwSortDir = -1;
+
+const kwPriorityOrder = {high:3,medium:2,low:1};
+
+function kwOpportunityScore(k) {
+  const volWeight = Math.log10(k.searchVolume + 1) / Math.log10(10000);
+  const kdWeight = (100 - k.kd) / 100;
+  const rankGap = Math.min(k.currentRank - k.targetRank, 50) / 50;
+  return Math.round((volWeight * 0.4 + kdWeight * 0.3 + rankGap * 0.3) * 100);
+}
+
+function kwRankChip(rank) {
+  if (rank <= 3) return `<span class="kw-rank-chip top3">🏆 #${rank}</span>`;
+  if (rank <= 10) return `<span class="kw-rank-chip top10">✅ #${rank}</span>`;
+  if (rank <= 20) return `<span class="kw-rank-chip top20">🔵 #${rank}</span>`;
+  return `<span class="kw-rank-chip out">🔴 #${rank}</span>`;
+}
+
+function kwTrendIcon(t) {
+  return t === 'up' ? '<span style="color:#10B981;font-size:13px">▲</span>' : t === 'down' ? '<span style="color:#EF4444;font-size:13px">▼</span>' : '<span style="color:#9CA3AF;font-size:13px">—</span>';
+}
+
+function sortKW(key) {
+  if (kwSortKey === key) kwSortDir *= -1;
+  else { kwSortKey = key; kwSortDir = -1; }
+  renderKeywords();
+}
+
+function renderKeywords() {
+  // Goal bar
+  const currentTotal = keywordsData.reduce((s,k) => s + k.currentTraffic, 0);
+  const potentialTotal = keywordsData.reduce((s,k) => s + k.potentialTraffic, 0);
+  const goal = 100000;
+  const pct = Math.min(Math.round(currentTotal / goal * 100), 100);
+  const pctPotential = Math.min(Math.round(potentialTotal / goal * 100), 100);
+  document.getElementById('kw-goal-bar').innerHTML = `
+    <div class="kw-goal-bar">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+        <div style="font-weight:700;font-size:15px;color:var(--navy)">🎯 Traffic Goal: 100K / month</div>
+        <div style="font-size:13px;color:var(--text-2)">Current est. <b>${currentTotal.toLocaleString()}</b> · At full execution: <b style="color:#10B981">${potentialTotal.toLocaleString()}</b></div>
+      </div>
+      <div style="position:relative">
+        <div class="kw-goal-track"><div class="kw-goal-fill" style="width:${pctPotential}%;opacity:0.25"></div></div>
+        <div class="kw-goal-track" style="position:absolute;top:0;left:0;right:0;background:transparent"><div class="kw-goal-fill" id="kw-fill-anim" style="width:0%"></div></div>
+      </div>
+      <div style="display:flex;gap:18px;font-size:12px;color:var(--text-3);margin-top:4px">
+        <span>📍 Now: ${pct}% of 100K</span>
+        <span style="color:#6366F1">🚀 Potential if all tasks done: ${pctPotential}% of 100K</span>
+        <span style="color:#9CA3AF">Gap to close: ${Math.max(0,goal-potentialTotal).toLocaleString()} visits/mo</span>
+      </div>
+    </div>`;
+  setTimeout(() => { const f = document.getElementById('kw-fill-anim'); if(f) f.style.width = pct + '%'; }, 60);
+
+  // Cluster pills
+  const pillsEl = document.getElementById('kw-cluster-pills');
+  if (pillsEl) pillsEl.innerHTML = kwClusters.map(c =>
+    `<span class="pill ${c===kwActiveCluster?'active':''}" onclick="setKwCluster('${c}',this)">${c}</span>`
+  ).join('');
+
+  // Quick wins
+  const quickWins = keywordsData.filter(k => k.currentRank >= 5 && k.currentRank <= 20 && k.searchVolume >= 1000);
+  const qwEl = document.getElementById('kw-quick-wins');
+  if (qwEl && quickWins.length) {
+    qwEl.innerHTML = `<div class="kw-quick-win-banner">
+      <span style="font-size:24px">⚡</span>
+      <div>
+        <div style="font-weight:700;color:#065F46;font-size:13px">Quick Wins — ${quickWins.length} keywords ranking positions 5–20 with 1K+ volume</div>
+        <div style="font-size:12px;color:#047857;margin-top:2px">${quickWins.slice(0,4).map(k=>`<b>${k.keyword}</b> (#${k.currentRank})`).join(' · ')}${quickWins.length>4?' · <i>+more</i>':''}</div>
+      </div>
+      <button class="btn btn-outline" style="margin-left:auto;font-size:12px;padding:6px 14px" onclick="setKwFilter_quickwins()">View Quick Wins</button>
+    </div>`;
+  }
+
+  // Filter + sort
+  let data = kwActiveCluster === 'All' ? [...keywordsData] : keywordsData.filter(k => k.cluster === kwActiveCluster);
+  data.sort((a,b) => {
+    let va = kwSortKey === 'priority' ? kwPriorityOrder[a.priority] : (a[kwSortKey] || 0);
+    let vb = kwSortKey === 'priority' ? kwPriorityOrder[b.priority] : (b[kwSortKey] || 0);
+    if (typeof va === 'string') return kwSortDir * va.localeCompare(vb);
+    return kwSortDir * (va - vb);
+  });
+
+  // Table
+  const tbody = document.getElementById('kw-body');
+  if (!tbody) return;
+  tbody.innerHTML = data.map(k => {
+    const opp = kwOpportunityScore(k);
+    return `<tr style="animation:fadeInUp .3s ease">
+      <td style="font-weight:600;max-width:200px">${k.keyword} ${kwTrendIcon(k.trend)}</td>
+      <td><span style="font-size:11px;background:#F3F4F6;border-radius:6px;padding:2px 7px;color:#374151">${k.cluster}</span></td>
+      <td style="font-weight:600">${k.searchVolume.toLocaleString()}</td>
+      <td><div style="display:flex;align-items:center;gap:6px"><div style="width:40px;height:6px;background:#E5E7EB;border-radius:99px;overflow:hidden"><div style="height:100%;background:${k.kd>=70?'#EF4444':k.kd>=45?'#F59E0B':'#10B981'};width:${k.kd}%"></div></div><span style="font-size:12px">${k.kd}</span></div></td>
+      <td>${kwRankChip(k.currentRank)}</td>
+      <td style="color:var(--text-3);font-size:12px">#${k.targetRank}</td>
+      <td style="color:#10B981;font-weight:600">+${k.potentialTraffic.toLocaleString()}</td>
+      <td><span class="kw-intent ${k.intent}">${k.intent}</span></td>
+      <td><span class="kw-badge ${k.priority}">${k.priority==='high'?'🔥':k.priority==='medium'?'⚡':'📌'} ${k.priority}</span></td>
+      <td style="font-size:11px;color:var(--text-3);max-width:160px;overflow:hidden;text-overflow:ellipsis">${k.page}</td>
+    </tr>`;
+  }).join('');
+
+  // Cluster breakdown cards
+  const clusters = kwClusters.filter(c => c !== 'All');
+  const cbEl = document.getElementById('kw-cluster-breakdown');
+  if (cbEl) cbEl.innerHTML = clusters.map(c => {
+    const ks = keywordsData.filter(k => k.cluster === c);
+    const vol = ks.reduce((s,k) => s+k.searchVolume,0);
+    const pot = ks.reduce((s,k) => s+k.potentialTraffic,0);
+    const avgRank = Math.round(ks.reduce((s,k) => s+k.currentRank,0)/ks.length);
+    const colors = {'Core Product':'#6366F1','Remote Work':'#10B981','Workforce Analytics':'#F59E0B','Time & Attendance':'#3B82F6','Competitor Gap':'#EF4444','AI / Future':'#8B5CF6'};
+    return `<div class="kw-cluster-card" onclick="setKwCluster('${c}')">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <div style="width:10px;height:10px;border-radius:50%;background:${colors[c]||'#6366F1'}"></div>
+        <div style="font-weight:700;font-size:13px;color:var(--navy)">${c}</div>
+        <div style="margin-left:auto;font-size:11px;color:var(--text-3)">${ks.length} keywords</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px">
+        <div><div style="color:var(--text-3)">Avg Rank</div><div style="font-weight:700;font-size:16px">#${avgRank}</div></div>
+        <div><div style="color:var(--text-3)">Vol/mo</div><div style="font-weight:700;font-size:15px">${(vol/1000).toFixed(1)}K</div></div>
+        <div><div style="color:var(--text-3)">Traffic gain</div><div style="font-weight:700;font-size:15px;color:#10B981">+${(pot/1000).toFixed(1)}K</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setKwCluster(c, el) {
+  kwActiveCluster = c;
+  renderKeywords();
+}
+
+function setKwFilter_quickwins() {
+  // Show only keywords in positions 5-20 sorted by volume
+  kwActiveCluster = 'All';
+  kwSortKey = 'searchVolume';
+  kwSortDir = -1;
+  renderKeywords();
+}
+
+function addKeyword() {
+  const kw = prompt('Enter keyword to track:');
+  if (!kw || !kw.trim()) return;
+  const page = prompt('Which page should this target? (e.g. /employee-monitoring-software)') || '/';
+  const vol = parseInt(prompt('Estimated monthly search volume:') || '0');
+  const cluster = prompt('Cluster (Core Product / Remote Work / Workforce Analytics / Time & Attendance / Competitor Gap / AI / Future):') || 'Core Product';
+  keywordsData.push({
+    id: keywordsData.length + 1, keyword: kw.trim(), cluster,
+    searchVolume: vol, kd: 50, currentRank: 50, targetRank: 5,
+    currentTraffic: 0, potentialTraffic: Math.round(vol * 0.05),
+    intent: 'commercial', priority: 'medium', page, trend: 'stable',
+    lastChecked: new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})
+  });
+  renderKeywords();
+  showCompletionToast('Keyword added: ' + kw.trim());
+}
+
+function runKeywordResearch() {
+  const btn = event.target;
+  btn.textContent = '⏳ Running…';
+  btn.disabled = true;
+  setTimeout(() => {
+    // Simulate rank update with slight variations
+    keywordsData.forEach(k => {
+      const delta = Math.floor(Math.random() * 5) - 2;
+      k.currentRank = Math.max(1, k.currentRank + delta);
+      k.trend = delta < 0 ? 'up' : delta > 0 ? 'down' : 'stable';
+      k.lastChecked = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      k.currentTraffic = Math.round(k.searchVolume * (k.currentRank <= 3 ? 0.25 : k.currentRank <= 10 ? 0.08 : k.currentRank <= 20 ? 0.03 : 0.01));
+    });
+    btn.textContent = '⚡ Run Apify Rank Check';
+    btn.disabled = false;
+    renderKeywords();
+    showCompletionToast('Rank check complete — ' + keywordsData.length + ' keywords updated');
+  }, 2200);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+renderTasks();
+renderWins();
+renderSidebarWins();
+renderSEO();
+renderContent();
+renderAB();
+renderCompetitors();
+renderDesign();
+renderAds();
+renderIntegrations();
+renderRecommendations();
+renderAlerts();
+renderTechnical();
+renderKeywords();
+
+// Animate health score
+(function(){
+  const el = document.getElementById('health-score');
+  let n = 0; const target = 42;
+  const iv = setInterval(() => {
+    n = Math.min(n + 2, target);
+    el.textContent = n + '/100';
+    if (n >= target) clearInterval(iv);
+  }, 30);
+})();
+</script>
+</body>
+</html>
