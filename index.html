@@ -490,6 +490,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--cream);col
 .kw-intent.informational{background:#D1FAE5;color:#065F46}
 .kw-intent.transactional{background:#FEE2E2;color:#991B1B}
 .kw-intent.navigational{background:#DBEAFE;color:#1E40AF}
+.kw-comp{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:700}
+.comp-low{background:#D1FAE5;color:#065F46}
+.comp-med{background:#FEF3C7;color:#92400E}
+.comp-high{background:#FEE2E2;color:#991B1B}
 .kw-rank-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:8px;font-size:12px;font-weight:700}
 .kw-rank-chip.top3{background:#D1FAE5;color:#065F46}
 .kw-rank-chip.top10{background:#FEF3C7;color:#92400E}
@@ -1610,7 +1614,7 @@ function showCompletionToast(title) {
 
 // ── BLOG TOPICS DATA ──────────────────────────────────────────────────────
 const blogTopicsData = [
-  {id:1, title:"Is Employee Monitoring Software Legal? A Complete Guide", targetKeyword:"is employee monitoring software legal", secondaryKeywords:["employee monitoring laws","workplace privacy laws","employee surveillance legality"], searchIntent:"informational", priority:"high", estWords:2800, status:"Idea",
+  {id:1, title:"Is Employee Monitoring Software Legal? A Complete Guide", targetKeyword:"is employee monitoring software legal", secondaryKeywords:["employee monitoring laws","workplace privacy laws","employee surveillance legality"], searchIntent:"informational", priority:"high", competition:"Low Competition", kd:25, estWords:2800, status:"Idea",
     h1:"Is Employee Monitoring Software Legal? Everything Employers Need to Know in 2026",
     h2s:["What Are the Laws Around Employee Monitoring?","Employee Monitoring by Country: US, UK, EU, India","What Employers Can and Cannot Monitor","How to Implement Legal Employee Monitoring","What We360.ai Does to Keep You Compliant"],
     h3s:["Federal Laws (ECPA, CFAA)","State-Level Variations (California, New York, Texas)","GDPR and EU Employee Privacy","India IT Act & Monitoring Provisions","Email and Chat Monitoring","Screen Recording Legality","GPS and Location Tracking Rules","Consent Requirements"],
@@ -1621,7 +1625,7 @@ const blogTopicsData = [
     writerNotes:"Focus on building trust — not scaring employers. Use a neutral, authoritative tone. Include a downloadable compliance checklist as a lead magnet.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 14, 2026", completedDate:null},
 
-  {id:2, title:"Best Employee Monitoring Software 2026: Top 10 Compared", targetKeyword:"best employee monitoring software", secondaryKeywords:["employee monitoring tools comparison","top employee tracking software 2026"], searchIntent:"commercial", priority:"high", estWords:3500, status:"Idea",
+  {id:2, title:"Best Employee Monitoring Software 2026: Top 10 Compared", targetKeyword:"best employee monitoring software", secondaryKeywords:["employee monitoring tools comparison","top employee tracking software 2026"], searchIntent:"commercial", priority:"high", competition:"High Competition", kd:62, estWords:3500, status:"Idea",
     h1:"Best Employee Monitoring Software in 2026: 10 Tools Compared Head-to-Head",
     h2s:["How We Evaluated These Tools","Top 10 Employee Monitoring Software","Feature Comparison Table","Which Tool is Right for Your Team?","Why We360.ai Stands Out"],
     h3s:["We360.ai","Hubstaff","Teramind","ActivTrak","Time Doctor","Veriato","InterGuard","DeskTime","Toggl Track","Insightful","Pricing Comparison","Feature Matrix","User Reviews Summary"],
@@ -1632,7 +1636,7 @@ const blogTopicsData = [
     writerNotes:"This is a money page — it needs to rank. Put We360.ai as #1 with honest pros/cons. Include real pricing from competitor sites. Add schema markup for Product comparison.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 16, 2026", completedDate:null},
 
-  {id:3, title:"How Does Employee Monitoring Software Work? Complete Breakdown", targetKeyword:"how does employee monitoring software work", secondaryKeywords:["employee monitoring explained","how employee tracking works"], searchIntent:"informational", priority:"high", estWords:2200, status:"Idea",
+  {id:3, title:"How Does Employee Monitoring Software Work? Complete Breakdown", targetKeyword:"how does employee monitoring software work", secondaryKeywords:["employee monitoring explained","how employee tracking works"], searchIntent:"informational", priority:"high", competition:"Medium Competition", kd:35, estWords:2200, status:"Idea",
     h1:"How Does Employee Monitoring Software Work? A Non-Technical Guide",
     h2s:["What Employee Monitoring Software Actually Does","How Data is Collected","What Reports and Insights Look Like","Privacy Safeguards Built In","Getting Started in Under 10 Minutes"],
     h3s:["Screen Monitoring & Screenshots","App and Website Tracking","Keystroke Logging (and Why Most Tools Skip It)","Time Tracking & Activity Levels","Productivity Scoring","Dashboard Walkthrough","Alert Systems","Data Encryption & Storage"],
@@ -1643,7 +1647,7 @@ const blogTopicsData = [
     writerNotes:"Use diagrams and screenshots. Target the 'awareness' stage buyer who is just learning. Keep it simple — no jargon.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 18, 2026", completedDate:null},
 
-  {id:4, title:"Is Employee Monitoring Software Worth It? ROI Analysis", targetKeyword:"is employee monitoring software worth it", secondaryKeywords:["employee monitoring ROI","benefits of employee monitoring"], searchIntent:"commercial", priority:"high", estWords:2000, status:"Idea",
+  {id:4, title:"Is Employee Monitoring Software Worth It? ROI Analysis", targetKeyword:"is employee monitoring software worth it", secondaryKeywords:["employee monitoring ROI","benefits of employee monitoring"], searchIntent:"commercial", priority:"high", competition:"Low Competition", kd:20, estWords:2000, status:"Idea",
     h1:"Is Employee Monitoring Software Worth It? Real ROI Data from 500+ Companies",
     h2s:["The Cost of Not Monitoring","Measurable ROI Metrics","Case Studies: Before vs After","Common Concerns Addressed","How to Calculate Your ROI"],
     h3s:["Productivity Gains (avg 23%)","Time Theft Reduction","Overtime Cost Savings","Compliance Risk Reduction","Employee Satisfaction Impact","ROI Calculator Walkthrough"],
@@ -1654,7 +1658,7 @@ const blogTopicsData = [
     writerNotes:"This is a conversion-focused post. Include a simple ROI calculator (embedded). Use real stats — cite sources. End with a strong demo CTA.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 21, 2026", completedDate:null},
 
-  {id:5, title:"Remote Employee Monitoring: How to Track Without Micromanaging", targetKeyword:"remote employee monitoring", secondaryKeywords:["monitor remote workers","work from home monitoring","remote team tracking"], searchIntent:"commercial", priority:"high", estWords:2500, status:"Idea",
+  {id:5, title:"Remote Employee Monitoring: How to Track Without Micromanaging", targetKeyword:"remote employee monitoring", secondaryKeywords:["monitor remote workers","work from home monitoring","remote team tracking"], searchIntent:"commercial", priority:"high", competition:"Medium Competition", kd:55, estWords:2500, status:"Idea",
     h1:"Remote Employee Monitoring in 2026: Track Productivity Without Micromanaging",
     h2s:["Why Remote Teams Need Monitoring","The Fine Line: Monitoring vs Micromanaging","Features That Matter for Remote Teams","How to Roll Out Monitoring for Remote Workers","We360.ai for Remote Teams"],
     h3s:["Trust-Based Monitoring","Activity vs Output Tracking","Time Zone Management","Async Work Patterns","Communication to Employees","Privacy-First Approach","Self-Service Dashboards for Employees"],
@@ -1665,7 +1669,7 @@ const blogTopicsData = [
     writerNotes:"This is a mid-funnel conversion page. Balance empathy (remote workers deserve trust) with business needs (accountability matters). Feature screenshots of We360 remote features.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 23, 2026", completedDate:null},
 
-  {id:6, title:"Employee Monitoring Software Alternatives: 2026 Comparison", targetKeyword:"employee monitoring software alternatives", secondaryKeywords:["alternatives to employee monitoring","monitoring software comparison"], searchIntent:"commercial", priority:"medium", estWords:2000, status:"Idea",
+  {id:6, title:"Employee Monitoring Software Alternatives: 2026 Comparison", targetKeyword:"employee monitoring software alternatives", secondaryKeywords:["alternatives to employee monitoring","monitoring software comparison"], searchIntent:"commercial", priority:"medium", competition:"Medium Competition", kd:45, estWords:2000, status:"Idea",
     h1:"Looking for Employee Monitoring Alternatives? Here's What Actually Works",
     h2s:["Why People Search for Alternatives","Top Alternative Approaches","Software Alternatives Compared","When Monitoring is Still the Best Option","The Balanced Approach"],
     h3s:["Project Management Tools","Trust-Based Systems","Output-Only Tracking","Hybrid Approaches","Feature Gaps in Alternatives"],
@@ -1676,7 +1680,7 @@ const blogTopicsData = [
     writerNotes:"Acknowledge that monitoring isn't for everyone. Be honest. Position We360.ai as the 'balanced middle ground' between full surveillance and no tracking.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 28, 2026", completedDate:null},
 
-  {id:7, title:"Are Remote Workers More Productive? Data-Backed Answer", targetKeyword:"are remote workers more productive", secondaryKeywords:["remote work productivity statistics","work from home productivity data"], searchIntent:"informational", priority:"medium", estWords:2200, status:"Idea",
+  {id:7, title:"Are Remote Workers More Productive? Data-Backed Answer", targetKeyword:"are remote workers more productive", secondaryKeywords:["remote work productivity statistics","work from home productivity data"], searchIntent:"informational", priority:"medium", competition:"Medium Competition", kd:30, estWords:2200, status:"Idea",
     h1:"Are Remote Workers More Productive? What the Data Actually Shows in 2026",
     h2s:["The Stanford Study and What's Changed","2026 Data: Remote vs Office vs Hybrid","What Drives Remote Productivity","When Remote Work Fails","How to Measure It Properly"],
     h3s:["Industry-by-Industry Breakdown","Role Type Impact","Meeting Overload Problem","Deep Work Hours","The Collaboration Gap","Burnout Risk","We360.ai Productivity Data"],
@@ -1687,7 +1691,7 @@ const blogTopicsData = [
     writerNotes:"Use actual data — cite studies with dates. Position We360.ai as the measurement tool, not the opinion. Infographic opportunity.",
     addedDate:"Apr 12, 2026", dueDate:"May 1, 2026", completedDate:null},
 
-  {id:8, title:"HR Analytics vs Workforce Analytics: What's the Difference?", targetKeyword:"HR analytics vs workforce analytics", secondaryKeywords:["difference between HR and workforce analytics","workforce analytics explained"], searchIntent:"informational", priority:"medium", estWords:1800, status:"Idea",
+  {id:8, title:"HR Analytics vs Workforce Analytics: What's the Difference?", targetKeyword:"HR analytics vs workforce analytics", secondaryKeywords:["difference between HR and workforce analytics","workforce analytics explained"], searchIntent:"informational", priority:"medium", competition:"Low Competition", kd:15, estWords:1800, status:"Idea",
     h1:"HR Analytics vs Workforce Analytics: What's the Difference and Why It Matters",
     h2s:["Defining HR Analytics","Defining Workforce Analytics","Key Differences at a Glance","When to Use Which","How They Work Together"],
     h3s:["Data Sources","Stakeholders","Decision Types","Time Horizon","Tools Used","Case Study: Using Both Together"],
@@ -1698,7 +1702,7 @@ const blogTopicsData = [
     writerNotes:"Educational piece — great for top-of-funnel organic. Include a clear comparison table. Link to We360.ai workforce analytics product page.",
     addedDate:"Apr 12, 2026", dueDate:"May 4, 2026", completedDate:null},
 
-  {id:9, title:"How to Automate Employee Monitoring: Setup to Insights in 10 Min", targetKeyword:"how to automate employee monitoring", secondaryKeywords:["automated employee tracking","set up monitoring software"], searchIntent:"informational", priority:"medium", estWords:1500, status:"Idea",
+  {id:9, title:"How to Automate Employee Monitoring: Setup to Insights in 10 Min", targetKeyword:"how to automate employee monitoring", secondaryKeywords:["automated employee tracking","set up monitoring software"], searchIntent:"informational", priority:"medium", competition:"Low Competition", kd:18, estWords:1500, status:"Idea",
     h1:"How to Automate Employee Monitoring: From Setup to Insights in Under 10 Minutes",
     h2s:["Why Automate Monitoring?","Step-by-Step Setup Guide","Automating Reports and Alerts","Advanced Automation Workflows","Common Setup Mistakes"],
     h3s:["Agent Installation","Dashboard Configuration","Alert Rules","Scheduled Reports","Integration with Slack/Teams","API Automation"],
@@ -1709,7 +1713,7 @@ const blogTopicsData = [
     writerNotes:"This is a product-led content piece. Use actual We360.ai screenshots for the walkthrough. Make it scannable — numbered steps with images.",
     addedDate:"Apr 12, 2026", dueDate:"May 6, 2026", completedDate:null},
 
-  {id:10, title:"What is Workforce Analytics? A Complete Guide for HR Leaders", targetKeyword:"what is workforce analytics", secondaryKeywords:["workforce analytics definition","workforce analytics guide"], searchIntent:"informational", priority:"medium", estWords:2500, status:"Idea",
+  {id:10, title:"What is Workforce Analytics? A Complete Guide for HR Leaders", targetKeyword:"what is workforce analytics", secondaryKeywords:["workforce analytics definition","workforce analytics guide"], searchIntent:"informational", priority:"medium", competition:"Medium Competition", kd:40, estWords:2500, status:"Idea",
     h1:"What is Workforce Analytics? The Complete 2026 Guide for HR Leaders",
     h2s:["Workforce Analytics Defined","Key Metrics to Track","Tools and Technology","Getting Started with Analytics","The Future: AI-Powered Workforce Intelligence"],
     h3s:["Productivity Metrics","Attendance Patterns","Engagement Indicators","Turnover Prediction","Dashboard KPIs","Build vs Buy","Data Privacy","We360.ai Analytics Suite"],
@@ -1720,7 +1724,7 @@ const blogTopicsData = [
     writerNotes:"Authority piece — needs to rank for the 3200 vol/mo keyword. Very comprehensive. Include embedded charts and infographics.",
     addedDate:"Apr 12, 2026", dueDate:"May 8, 2026", completedDate:null},
 
-  {id:11, title:"Hubstaff vs We360.ai: Honest 2026 Comparison", targetKeyword:"hubstaff alternative", secondaryKeywords:["hubstaff vs we360","we360 vs hubstaff","hubstaff comparison"], searchIntent:"commercial", priority:"high", estWords:2500, status:"Idea",
+  {id:11, title:"Hubstaff vs We360.ai: Honest 2026 Comparison", targetKeyword:"hubstaff alternative", secondaryKeywords:["hubstaff vs we360","we360 vs hubstaff","hubstaff comparison"], searchIntent:"commercial", priority:"high", competition:"Medium Competition", kd:35, estWords:2500, status:"Idea",
     h1:"Hubstaff vs We360.ai: Which Employee Monitoring Tool is Actually Better in 2026?",
     h2s:["Quick Verdict","Feature-by-Feature Comparison","Pricing Breakdown","Who Should Use Which","Real User Reviews"],
     h3s:["Time Tracking","Screenshots","Activity Levels","GPS Tracking","Invoicing","Integrations","AI Features","Mobile App","Customer Support","Free Trial"],
@@ -1731,7 +1735,7 @@ const blogTopicsData = [
     writerNotes:"Be genuinely honest — admit where Hubstaff is better (invoicing, GPS). Win on AI analytics, pricing, and ease of use. Include a pricing comparison table with actual numbers.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 15, 2026", completedDate:null},
 
-  {id:12, title:"Teramind vs We360.ai: Enterprise Monitoring Compared", targetKeyword:"teramind alternative", secondaryKeywords:["teramind vs we360","teramind comparison"], searchIntent:"commercial", priority:"high", estWords:2200, status:"Idea",
+  {id:12, title:"Teramind vs We360.ai: Enterprise Monitoring Compared", targetKeyword:"teramind alternative", secondaryKeywords:["teramind vs we360","teramind comparison"], searchIntent:"commercial", priority:"high", competition:"Medium Competition", kd:32, estWords:2200, status:"Idea",
     h1:"Teramind vs We360.ai: Enterprise Employee Monitoring Compared",
     h2s:["At a Glance","Feature Comparison","Security & DLP Features","Pricing & Plans","Our Honest Take"],
     h3s:["User Activity Monitoring","Insider Threat Detection","Data Loss Prevention","Behavior Analytics","Deployment Options","Compliance Features","AI Capabilities","Support Quality"],
@@ -1742,7 +1746,7 @@ const blogTopicsData = [
     writerNotes:"Teramind is enterprise-focused and expensive. Position We360.ai as the accessible alternative with comparable features at a fraction of the cost.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 20, 2026", completedDate:null},
 
-  {id:13, title:"The 3-3-3 Productivity Rule: A Manager's Guide", targetKeyword:"3 3 3 rule productivity", secondaryKeywords:["productivity rules for managers","333 rule work"], searchIntent:"informational", priority:"low", estWords:1500, status:"Idea",
+  {id:13, title:"The 3-3-3 Productivity Rule: A Manager's Guide", targetKeyword:"3 3 3 rule productivity", secondaryKeywords:["productivity rules for managers","333 rule work"], searchIntent:"informational", priority:"low", competition:"Low Competition", kd:12, estWords:1500, status:"Idea",
     h1:"The 3-3-3 Productivity Rule: How Managers Can Help Teams Focus",
     h2s:["What is the 3-3-3 Rule?","How to Implement It in Your Team","Measuring the Impact","Beyond 3-3-3: Other Frameworks"],
     h3s:["3 Hours of Deep Work","3 Shorter Tasks","3 Maintenance Items","Tracking with We360.ai","Pomodoro vs 3-3-3","Time Blocking Integration"],
@@ -1753,7 +1757,7 @@ const blogTopicsData = [
     writerNotes:"Light, engaging piece. Good for top-of-funnel organic traffic. Include a downloadable daily planner template.",
     addedDate:"Apr 12, 2026", dueDate:"May 12, 2026", completedDate:null},
 
-  {id:14, title:"Employee Productivity Benchmarks by Industry [2026 Data]", targetKeyword:"employee productivity benchmarks", secondaryKeywords:["productivity benchmarks by industry","average employee productivity"], searchIntent:"informational", priority:"high", estWords:2800, status:"Idea",
+  {id:14, title:"Employee Productivity Benchmarks by Industry [2026 Data]", targetKeyword:"employee productivity benchmarks", secondaryKeywords:["productivity benchmarks by industry","average employee productivity"], searchIntent:"informational", priority:"high", competition:"Medium Competition", kd:35, estWords:2800, status:"Idea",
     h1:"Employee Productivity Benchmarks by Industry: 2026 Data & How You Compare",
     h2s:["Overall Productivity Benchmarks","Industry-by-Industry Data","How to Measure Your Team","Improving Below-Average Scores","Tools for Benchmarking"],
     h3s:["IT & Software","BPO & Call Centers","Healthcare","Finance","Manufacturing","Remote vs Office Benchmarks","Active Time Metrics","App Usage Patterns","We360.ai Benchmarking Dashboard"],
@@ -1764,7 +1768,7 @@ const blogTopicsData = [
     writerNotes:"Data-heavy piece — needs charts, tables, infographics. This is a linkable asset (other blogs will cite your data). Include downloadable PDF with full benchmark data.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 25, 2026", completedDate:null},
 
-  {id:15, title:"How to Reduce Employee Absenteeism: A Data-Driven Approach", targetKeyword:"reduce employee absenteeism", secondaryKeywords:["employee absenteeism solutions","attendance management"], searchIntent:"informational", priority:"medium", estWords:2000, status:"Idea",
+  {id:15, title:"How to Reduce Employee Absenteeism: A Data-Driven Approach", targetKeyword:"reduce employee absenteeism", secondaryKeywords:["employee absenteeism solutions","attendance management"], searchIntent:"informational", priority:"medium", competition:"Medium Competition", kd:35, estWords:2000, status:"Idea",
     h1:"How to Reduce Employee Absenteeism: A Data-Driven Approach That Works",
     h2s:["The Real Cost of Absenteeism","Root Causes (Data Analysis)","Proven Reduction Strategies","Technology Solutions","Measuring Improvement"],
     h3s:["Direct vs Indirect Costs","Pattern Detection","Seasonal Trends","Engagement Connection","Flexible Work Policies","Wellness Programs","Attendance Tracking Tools","We360.ai Attendance Module"],
@@ -1775,7 +1779,7 @@ const blogTopicsData = [
     writerNotes:"Position We360.ai's attendance tracking as the solution. Use real statistics. Include a cost calculator.",
     addedDate:"Apr 12, 2026", dueDate:"May 10, 2026", completedDate:null},
 
-  {id:16, title:"Time Tracking for Remote Teams: 7 Best Practices", targetKeyword:"time tracking remote teams", secondaryKeywords:["remote time tracking software","track remote employee hours"], searchIntent:"informational", priority:"medium", estWords:1800, status:"Idea",
+  {id:16, title:"Time Tracking for Remote Teams: 7 Best Practices", targetKeyword:"time tracking remote teams", secondaryKeywords:["remote time tracking software","track remote employee hours"], searchIntent:"informational", priority:"medium", competition:"Medium Competition", kd:35, estWords:1800, status:"Idea",
     h1:"Time Tracking for Remote Teams: 7 Best Practices That Don't Kill Morale",
     h2s:["Why Time Tracking Matters for Remote Teams","7 Best Practices","Common Mistakes to Avoid","Tools That Work","Implementation Playbook"],
     h3s:["Communicate the Why","Focus on Outcomes","Automate Where Possible","Respect Time Zones","Allow Flexibility","Use Dashboards Not Surveillance","Regular Check-ins"],
@@ -1786,7 +1790,7 @@ const blogTopicsData = [
     writerNotes:"Emphasize the trust angle. Remote workers are sensitive about being tracked. Position We360.ai as the privacy-first option.",
     addedDate:"Apr 12, 2026", dueDate:"May 14, 2026", completedDate:null},
 
-  {id:17, title:"ActivTrak vs We360.ai: Which Productivity Tool Wins?", targetKeyword:"activtrak alternative", secondaryKeywords:["activtrak vs we360","activtrak comparison"], searchIntent:"commercial", priority:"high", estWords:2000, status:"Idea",
+  {id:17, title:"ActivTrak vs We360.ai: Which Productivity Tool Wins?", targetKeyword:"activtrak alternative", secondaryKeywords:["activtrak vs we360","activtrak comparison"], searchIntent:"commercial", priority:"high", competition:"Medium Competition", kd:30, estWords:2000, status:"Idea",
     h1:"ActivTrak vs We360.ai: Which Employee Productivity Tool is Better in 2026?",
     h2s:["Quick Comparison","Feature Breakdown","Pricing Analysis","User Experience","The Verdict"],
     h3s:["Productivity Scoring","App Usage Analytics","Team Dashboards","Coaching Features","AI Insights","Free Plan Comparison","Enterprise Features"],
@@ -1797,7 +1801,7 @@ const blogTopicsData = [
     writerNotes:"ActivTrak has a strong free tier. Acknowledge it. Win on AI capabilities, depth of analytics, and value at scale.",
     addedDate:"Apr 12, 2026", dueDate:"Apr 22, 2026", completedDate:null},
 
-  {id:18, title:"Time Doctor Alternative: Why Teams Are Switching in 2026", targetKeyword:"time doctor alternative", secondaryKeywords:["time doctor vs we360","time doctor comparison"], searchIntent:"commercial", priority:"medium", estWords:2000, status:"Idea",
+  {id:18, title:"Time Doctor Alternative: Why Teams Are Switching in 2026", targetKeyword:"time doctor alternative", secondaryKeywords:["time doctor vs we360","time doctor comparison"], searchIntent:"commercial", priority:"medium", competition:"Medium Competition", kd:33, estWords:2000, status:"Idea",
     h1:"Looking for a Time Doctor Alternative? Here's Why Teams Are Switching to We360.ai",
     h2s:["Why People Leave Time Doctor","Head-to-Head Comparison","What We360.ai Does Differently","Migration Guide","User Stories"],
     h3s:["Interface Complaints","Pricing Issues","Feature Gaps","AI Analytics Advantage","Setup Simplicity","Support Quality"],
@@ -1808,7 +1812,7 @@ const blogTopicsData = [
     writerNotes:"Conversion-focused. Lead with pain points that Time Doctor users have. Show the migration path is easy.",
     addedDate:"Apr 12, 2026", dueDate:"May 5, 2026", completedDate:null},
 
-  {id:19, title:"AI Workforce Analytics: How AI is Changing Employee Monitoring", targetKeyword:"AI workforce analytics", secondaryKeywords:["AI employee monitoring","artificial intelligence workforce management"], searchIntent:"informational", priority:"medium", estWords:2200, status:"Idea",
+  {id:19, title:"AI Workforce Analytics: How AI is Changing Employee Monitoring", targetKeyword:"AI workforce analytics", secondaryKeywords:["AI employee monitoring","artificial intelligence workforce management"], searchIntent:"informational", priority:"medium", competition:"Low Competition", kd:28, estWords:2200, status:"Idea",
     h1:"AI Workforce Analytics: How Artificial Intelligence is Transforming Employee Monitoring",
     h2s:["The Shift from Tracking to Intelligence","AI Features in Monitoring Software","Real-World Applications","Privacy and Ethical Concerns","What's Next"],
     h3s:["Predictive Analytics","Burnout Detection","Smart Alerts","Automated Insights","Natural Language Queries","Anomaly Detection","We360.ai AI Suite"],
@@ -1819,7 +1823,7 @@ const blogTopicsData = [
     writerNotes:"Thought leadership piece. Position Arnav/We360.ai as a pioneer in AI-powered workforce analytics. Good candidate for a LinkedIn post tie-in.",
     addedDate:"Apr 12, 2026", dueDate:"May 7, 2026", completedDate:null},
 
-  {id:20, title:"Employee Monitoring vs Employee Engagement: Getting the Balance Right", targetKeyword:"employee monitoring vs engagement", secondaryKeywords:["employee surveillance impact on engagement","monitoring trust balance"], searchIntent:"informational", priority:"medium", estWords:2000, status:"Idea",
+  {id:20, title:"Employee Monitoring vs Employee Engagement: Getting the Balance Right", targetKeyword:"employee monitoring vs engagement", secondaryKeywords:["employee surveillance impact on engagement","monitoring trust balance"], searchIntent:"informational", priority:"medium", competition:"Medium Competition", kd:35, estWords:2000, status:"Idea",
     h1:"Employee Monitoring vs Employee Engagement: How to Get the Balance Right",
     h2s:["The Tension Between Monitoring and Trust","What Research Shows","Building a Culture of Transparency","Tools That Support Both","The We360.ai Philosophy"],
     h3s:["Surveillance Fatigue","Psychological Safety","Communication Framework","Self-Service Dashboards","Privacy Controls","Manager Training","Feedback Loops"],
@@ -1830,7 +1834,7 @@ const blogTopicsData = [
     writerNotes:"This is a trust-building piece. Acknowledge the real concerns. Show that We360.ai is built with employee well-being in mind.",
     addedDate:"Apr 12, 2026", dueDate:"May 15, 2026", completedDate:null},
   // ── NEW BLOG TOPICS FROM PAA KEYWORD DISCOVERY (Apr 13, 2026) ────────────
-  {id:21, title:"Can Your Employer Tell If You're Being Monitored? Signs & Facts", targetKeyword:"can I tell if my employer is monitoring my computer", secondaryKeywords:["how to know if employer is monitoring","signs of computer monitoring at work"], searchIntent:"informational", priority:"high", estWords:2000, status:"Idea",
+  {id:21, title:"Can Your Employer Tell If You're Being Monitored? Signs & Facts", targetKeyword:"can I tell if my employer is monitoring my computer", secondaryKeywords:["how to know if employer is monitoring","signs of computer monitoring at work"], searchIntent:"informational", priority:"high", competition:"Low Competition", kd:15, estWords:2000, status:"Idea",
     h1:"Can You Tell If Your Employer Is Monitoring Your Computer? Here's What to Look For",
     h2s:["Common Signs of Employee Monitoring","Types of Monitoring Software","What Employers Can Legally Track","How to Check If You're Being Monitored","What to Do If You Find Monitoring Software"],
     h3s:["Task Manager Signs","Network Activity Indicators","Browser Extension Checks","Registry and Process Checks","Screen Recording Detection","Keystroke Logger Signs","Your Rights as an Employee","Transparent vs Stealth Monitoring"],
@@ -1840,7 +1844,7 @@ const blogTopicsData = [
     competitorRef:["Teramind transparency guide","ActivTrak employee communication template"],
     writerNotes:"Employee-side content — builds trust by being honest. Position We360.ai as the 'transparent monitoring' solution. High PAA opportunity score (8). Zero competition (allintitle: 0).",
     addedDate:"Apr 13, 2026", dueDate:"Apr 25, 2026", completedDate:null},
-  {id:22, title:"How to See What Employees Are Doing on Their Computers (Ethically)", targetKeyword:"how can I see what my employees are doing on their computers", secondaryKeywords:["track employee computer activity","monitor employee screen time"], searchIntent:"commercial", priority:"high", estWords:2200, status:"Idea",
+  {id:22, title:"How to See What Employees Are Doing on Their Computers (Ethically)", targetKeyword:"how can I see what my employees are doing on their computers", secondaryKeywords:["track employee computer activity","monitor employee screen time"], searchIntent:"commercial", priority:"high", competition:"Medium Competition", kd:35, estWords:2200, status:"Idea",
     h1:"How to See What Your Employees Are Doing on Their Computers — The Ethical Way",
     h2s:["Why Employers Want Visibility","Legal Considerations Before You Start","Methods to Track Computer Activity","Setting Up Employee Monitoring","Best Practices for Ethical Monitoring"],
     h3s:["Activity Level Tracking","App and Website Usage Reports","Screenshot Monitoring","Time Tracking","Productivity Scoring","Getting Employee Buy-In","Communication Templates","We360.ai Setup Guide"],
@@ -1850,7 +1854,7 @@ const blogTopicsData = [
     competitorRef:["Hubstaff employer guide","Time Doctor monitoring features"],
     writerNotes:"Employer-side conversion content. Focus on ethical framing — not surveillance. Include a step-by-step We360.ai setup walkthrough. PAA score: 8, allintitle: 0.",
     addedDate:"Apr 13, 2026", dueDate:"Apr 27, 2026", completedDate:null},
-  {id:23, title:"Is Remote Work Going Away in 2026? Data Says Otherwise", targetKeyword:"is remote work going away in 2026", secondaryKeywords:["future of remote work 2026","will companies bring employees back to office"], searchIntent:"informational", priority:"medium", estWords:2000, status:"Idea",
+  {id:23, title:"Is Remote Work Going Away in 2026? Data Says Otherwise", targetKeyword:"is remote work going away in 2026", secondaryKeywords:["future of remote work 2026","will companies bring employees back to office"], searchIntent:"informational", priority:"medium", competition:"Low Competition", kd:10, estWords:2000, status:"Idea",
     h1:"Is Remote Work Going Away in 2026? What the Data Actually Shows",
     h2s:["The Return-to-Office Headlines vs Reality","2026 Remote Work Statistics","Industries Still Going Remote","Why Hybrid is Winning","How to Make Remote Work Actually Work"],
     h3s:["Fortune 500 RTO Mandates","Startup Remote-First Trend","Employee Preference Data","Productivity Comparison","Cost Savings for Employers","Remote Work Tools Adoption","We360.ai for Remote Teams"],
@@ -1860,7 +1864,7 @@ const blogTopicsData = [
     competitorRef:["McKinsey remote work report","Buffer State of Remote Work 2026"],
     writerNotes:"Trending topic — high search volume in Q1/Q2 2026. Take a balanced stance. Link to We360.ai remote monitoring features. PAA score: 8, zero competition.",
     addedDate:"Apr 13, 2026", dueDate:"May 2, 2026", completedDate:null},
-  {id:24, title:"What Does a Workforce Analyst Do? Role, Skills & Career Path", targetKeyword:"what does a workforce analyst do", secondaryKeywords:["workforce analyst job description","workforce analytics career"], searchIntent:"informational", priority:"medium", estWords:1800, status:"Idea",
+  {id:24, title:"What Does a Workforce Analyst Do? Role, Skills & Career Path", targetKeyword:"what does a workforce analyst do", secondaryKeywords:["workforce analyst job description","workforce analytics career"], searchIntent:"informational", priority:"medium", competition:"Low Competition", kd:18, estWords:1800, status:"Idea",
     h1:"What Does a Workforce Analyst Do? Complete Role Guide for 2026",
     h2s:["Workforce Analyst Role Overview","Key Responsibilities","Essential Skills and Tools","Career Path and Salary","How We360.ai Supports Workforce Analysts"],
     h3s:["Data Collection","Report Generation","Trend Analysis","Capacity Planning","SQL and Excel Skills","Dashboard Tools","Certifications","Entry to Senior Path"],
@@ -1870,7 +1874,7 @@ const blogTopicsData = [
     competitorRef:["LinkedIn workforce analyst job postings","Glassdoor salary data"],
     writerNotes:"Top-of-funnel educational content targeting people researching this career. Position We360.ai as the tool these professionals use. PAA score: 8, allintitle: 0.",
     addedDate:"Apr 13, 2026", dueDate:"May 5, 2026", completedDate:null},
-  {id:25, title:"Is Remote Employee Productivity Monitoring Worth It? ROI Breakdown", targetKeyword:"is remote employee productivity worth it", secondaryKeywords:["remote monitoring ROI","remote employee productivity tracking cost"], searchIntent:"commercial", priority:"high", estWords:2200, status:"Idea",
+  {id:25, title:"Is Remote Employee Productivity Monitoring Worth It? ROI Breakdown", targetKeyword:"is remote employee productivity worth it", secondaryKeywords:["remote monitoring ROI","remote employee productivity tracking cost"], searchIntent:"commercial", priority:"high", competition:"Low Competition", kd:15, estWords:2200, status:"Idea",
     h1:"Is Remote Employee Productivity Monitoring Worth It? A Data-Driven ROI Analysis",
     h2s:["The Cost of Unmonitored Remote Work","Measuring Remote Productivity ROI","Real Numbers: Before vs After Monitoring","Common Objections Addressed","How to Get Started Without Breaking Trust"],
     h3s:["Time Theft Statistics","Productivity Gains Data","Software Cost vs Savings","Employee Retention Impact","Privacy Concerns","Trust-Based Implementation","30-Day Trial Framework","We360.ai ROI Calculator"],
@@ -1999,7 +2003,8 @@ function renderSprint() {
 }
 
 function renderSprintGrid(filtered) {
-  const priorityBadge = p => `<span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:${p==='high'?'#FEE2E2;color:#991B1B':p==='medium'?'#FEF3C7;color:#92400E':'#E5E7EB;color:#6B7280'}">${p}</span>`;
+  const priorityBadge = p => `<span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:${p==='high'?'#FEE2E2;color:#991B1B':p==='medium'?'#FEF3C7;color:#92400E':'#E5E7EB;color:#6B7280'}">${p === 'high' ? 'High Priority' : p === 'medium' ? 'Medium Priority' : 'Low Priority'}</span>`;
+  const compBadge = b => b.competition ? `<span class="kw-comp ${b.competition.includes('Low')?'comp-low':b.competition.includes('High')?'comp-high':'comp-med'}">${b.competition}</span>` : '';
   const gridView = document.getElementById('sprint-grid-view');
   const grid = document.createElement('div');
   grid.className = 'blog-sprint-grid';
@@ -2011,6 +2016,7 @@ function renderSprintGrid(filtered) {
         <span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:rgba(91,69,224,.1);color:var(--primary)">${b.searchIntent}</span>
         <span style="display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#E5E7EB;color:#374151">${b.estWords.toLocaleString()} words</span>
         ${priorityBadge(b.priority)}
+        ${compBadge(b)}
         <span class="blog-status ${b.status.replace(' ','')}">${b.status}</span>
       </div>
       <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:11px;display:flex;justify-content:space-between;align-items:center">
@@ -2042,7 +2048,8 @@ function renderSprintKanban(filtered) {
         <div style="font-size:11px;color:var(--primary);margin-bottom:8px">📌 ${b.targetKeyword}</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
           <span class="kw-intent">${b.searchIntent}</span>
-          <span class="kw-badge">${b.priority==='high'?'🔥':'⚡'} ${b.priority}</span>
+          <span class="kw-badge">${b.priority==='high'?'🔥':'⚡'} ${b.priority === 'high' ? 'High Priority' : b.priority === 'medium' ? 'Medium Priority' : 'Low Priority'}</span>
+          ${b.competition ? '<span class="kw-comp ' + (b.competition.includes('Low') ? 'comp-low' : b.competition.includes('High') ? 'comp-high' : 'comp-med') + '">' + b.competition + '</span>' : ''}
           <span style="font-size:11px;color:var(--text-3);margin-left:auto">${b.estWords} words</span>
         </div>
         <div style="font-size:10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center">
