@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-09-08",
+  "environment": "production",
+  "scope_file": "../_test-scope.json — the permanent, locked page list + per-tool page assignment (source of truth, do not re-randomize)",
+  "note": "Page scope finalized after discussion: homepage + 1 page each from solutions/alternative/industry/blog/features, picked once and fixed forever for trend comparison. Each per-page tool tests its OWN distinct page within a category (see _test-scope.json per_page_tool_assignment) for broader site coverage.",
+  "excluded": {
+    "landing_pages_collection": [
+      "https://www.we360.ai/attendance-tracking-software",
+      "https://www.we360.ai/monitoring-software",
+      "https://www.we360.ai/employee-monitoring-software-2",
+      "https://www.we360.ai/employee-monitoring-software",
+      "https://www.we360.ai/productivity-tracking"
+    ],
+    "other": ["docs.we360.ai (GitBook — separate system, tracked elsewhere)"]
+  },
+  "tools": {
+    "pagespeed_insights": {
+      "status": "done",
+      "kind": "per-page",
+      "url": "https://pagespeed.web.dev/ (used real API, not the web UI)",
+      "file": "pagespeed-insights.json",
+      "method": "real API (PAGESPEED_API_KEY, 6 pages x mobile+desktop = 12 calls, all succeeded)",
+      "tasks_drafted": 8,
+      "tasks_file": "../tasks.json (+ ../tasks.tsv for pasting into the sheet)"
+    },
+    "pingdom": { "status": "done", "kind": "per-page", "url": "https://tools.pingdom.com/", "file": "pingdom.json", "tasks_added": 2, "tasks_updated": 1 },
+    "speedvitals": { "status": "done", "kind": "per-page", "url": "https://speedvitals.com/ (speed test + Core Web Vitals checker, same page per category)", "file": "speedvitals.json", "tasks_added": 1, "tasks_updated": 2 },
+    "webpagetest": { "status": "partial", "kind": "per-page", "url": "https://www.webpagetest.org/", "file": "webpagetest.json", "tasks_added": 0, "tasks_updated": 1, "note": "hit anonymous free-tier limit after 3/6 pages (homepage, solutions-time-tracking, alternative-hubstaff); industry-hr-and-staffing, blog, features-reports not tested" },
+    "schema_validator": { "status": "done", "kind": "per-page", "url": "https://search.google.com/test/rich-results (schema-validator.org was unreachable from the Browser pane)", "file": "schema-validator.json", "tasks_added": 0, "tasks_updated": 0, "note": "confirms known sheet ticket not yet on prod, no new task per user guidance" },
+    "ssl_labs": { "status": "done", "kind": "once-per-domain", "url": "https://www.ssllabs.com/ssltest/", "tasks_added": 0, "note": "all 6 Cloudflare edge servers graded A+, no issues" },
+    "security_headers": { "status": "done", "kind": "once-per-domain", "url": "https://securityheaders.com/", "file": "security-headers.json", "tasks_added": 1 },
+    "mozilla_http_observatory": { "status": "done", "kind": "once-per-domain", "url": "https://developer.mozilla.org/en-US/observatory", "file": "security-headers.json", "tasks_added": 0, "note": "corroborated securityheaders.com finding, folded into same task" },
+    "isagentready": { "status": "done", "kind": "once-per-domain", "url": "https://isagentready.com/", "file": "isagentready.json", "tasks_added": 1, "tasks_updated": 1, "note": "74/100 grade B; AI visitor test notably failed to understand site purpose or navigate it (experimental, no formal task drafted)" },
+    "llms_txt_validator": { "status": "done", "kind": "once-per-domain", "url": "https://llmstxtvalidator.dev/ (tool itself hit CORS fetch failure; validated file content manually via curl)", "tasks_added": 0, "note": "llms.txt is well-built (23.6KB, proper structure) - no issue found" },
+    "crux_dashboard_vis": { "status": "done", "kind": "once-per-domain (origin-level)", "url": "https://cruxvis.withgoogle.com/ (old CrUX Dashboard is fully decommissioned)", "file": "crux-vis.json", "tasks_added": 0, "note": "all 3 CWV trending positively" }
+  }
+}

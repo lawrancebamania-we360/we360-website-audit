@@ -1,0 +1,63 @@
+{
+  "note": "Permanent, locked test scope for the recurring multi-tool site-health audit. Each per-page tool gets its OWN distinct page within a category (for broader site coverage) — picked once (random, verified HTTP 200, re-rolled on failure) and never re-randomized, so a given tool+page pair is directly comparable over time. Once-per-domain tools always hit the homepage/domain, same for every tool.",
+  "environment": "production",
+  "domain": "www.we360.ai",
+  "homepage": "https://www.we360.ai/",
+  "per_page_tool_assignment": {
+    "solutions": {
+      "pagespeed_insights": "https://www.we360.ai/solutions/wfh-monitoring/",
+      "pingdom": "https://www.we360.ai/solutions/project-management-software/",
+      "speedvitals": "https://www.we360.ai/solutions/capacity-planning-software/",
+      "webpagetest": "https://www.we360.ai/solutions/time-tracking/",
+      "schema_validator": "https://www.we360.ai/solutions/workforce-analytics/"
+    },
+    "alternative": {
+      "pagespeed_insights": "https://www.we360.ai/alternative/timechamp/",
+      "pingdom": "https://www.we360.ai/alternative/activtrak/",
+      "speedvitals": "https://www.we360.ai/alternative/desktime/",
+      "webpagetest": "https://www.we360.ai/alternative/hubstaff/",
+      "schema_validator": "https://www.we360.ai/alternative/insightful/"
+    },
+    "industry": {
+      "pagespeed_insights": "https://www.we360.ai/industry/digital-marketing-agency/",
+      "pingdom": "https://www.we360.ai/industry/edtech/",
+      "speedvitals": "https://www.we360.ai/industry/healthcare/",
+      "webpagetest": "https://www.we360.ai/industry/hr-and-staffing/",
+      "schema_validator": "https://www.we360.ai/industry/information-technology/"
+    },
+    "blog": {
+      "pagespeed_insights": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+      "pingdom": "https://www.we360.ai/blog/15-productivity-hacks-for-a-successful-2025/",
+      "speedvitals": "https://www.we360.ai/blog/unengaged-vs-disengaged-employees-key-difference/",
+      "webpagetest": "https://www.we360.ai/blog/how-to-create-a-100-transparent-environment-for-your-employees-2/",
+      "schema_validator": "https://www.we360.ai/blog/how-do-you-reduce-bench-time/"
+    },
+    "features": {
+      "pagespeed_insights": "https://www.we360.ai/features/project-task-management/",
+      "pingdom": "https://www.we360.ai/integrations/monday/",
+      "speedvitals": "https://www.we360.ai/features/attrition-risk/",
+      "webpagetest": "https://www.we360.ai/features/reports/",
+      "schema_validator": "https://www.we360.ai/features/domain-blocking/"
+    }
+  },
+  "notes_on_assignment": [
+    "pagespeed_insights column = already tested in Test 1, kept fixed.",
+    "alternative/pingdom + alternative/speedvitals = per user's explicit example (activtrak, desktime).",
+    "speedvitals_speed_test and speedvitals_cwv_checker share the same 'speedvitals' page per category (same tool/site, two views of one page) — flagging this assumption for confirmation.",
+    "All other cells randomly assigned from each category's real page pool, verified HTTP 200."
+  ],
+  "excluded": {
+    "landing_pages_collection": [
+      "https://www.we360.ai/attendance-tracking-software",
+      "https://www.we360.ai/monitoring-software",
+      "https://www.we360.ai/employee-monitoring-software-2",
+      "https://www.we360.ai/employee-monitoring-software",
+      "https://www.we360.ai/productivity-tracking"
+    ],
+    "other": ["docs.we360.ai (GitBook — separate system, tracked elsewhere)"]
+  },
+  "once_per_domain_tools": {
+    "tools": ["ssl_labs", "security_headers", "mozilla_http_observatory", "isagentready", "llms_txt_validator", "crux_dashboard_vis_origin_level"],
+    "representative_url": "https://www.we360.ai/"
+  }
+}

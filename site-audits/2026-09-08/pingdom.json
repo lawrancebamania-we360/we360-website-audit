@@ -1,0 +1,23 @@
+{
+  "tool": "Pingdom Website Speed Test (tools.pingdom.com)",
+  "tested_environment": "production",
+  "run_at": "2026-09-08T12:50:00+05:30",
+  "verification_notes": [
+    "Pingdom's 'Compress components with gzip' grade (D67-F45 across pages) is a FALSE POSITIVE — verified via curl that www.we360.ai and media.we360.ai both serve Brotli compression (Content-Encoding: br) with gzip fallback for older clients. Pingdom's checker appears not to recognize Brotli. Not turned into a task.",
+    "Pingdom's 'Add Expires headers' grade (F23-E56 across pages) IS real — curl-verified Cache-Control: max-age=28800 (8 hours) on media.we360.ai assets. This is the exact scope of the sheet's already-'Done' ticket 'Raise static-asset cache TTL to 1 year' — confirms that fix has not reached production. Folded into the existing cache-lifetime task.",
+    "Every page shows exactly 3 'Error' content-type requests (15-17KB combined) in the response breakdown — consistent across 5 of 6 pages. Could not conclusively identify the exact failing URLs within this session's budget (Pingdom's own file-list detail would need to be paged through; a fresh browser load of the homepage didn't surface any 4xx/5xx in the first 18 requests, but lazy-loaded images below the fold weren't triggered). Logged as a task to investigate, flagged as needing more digging rather than a fully diagnosed root cause."
+  ],
+  "results": [
+    { "label": "homepage", "url": "https://www.we360.ai/", "grade": "B", "score": 88, "page_size_mb": 5.0, "load_time_s": 3.07, "requests": 106, "image_pct_of_size": 96.0, "media_we360_ai_pct_of_size": 94.35, "media_we360_ai_requests": 70 },
+    { "label": "solutions-project-management-software", "url": "https://www.we360.ai/solutions/project-management-software/", "grade": "A", "score": 93, "page_size_mb": 4.5, "load_time_s": 1.72, "requests": 61, "image_pct_of_size": 96.02, "media_we360_ai_pct_of_size": 94.60, "media_we360_ai_requests": 31 },
+    { "label": "alternative-activtrak", "url": "https://www.we360.ai/alternative/activtrak/", "grade": "B", "score": 89, "page_size_mb": 3.4, "load_time_s": 2.79, "requests": 86, "image_pct_of_size": 94.26, "media_we360_ai_pct_of_size": 92.08, "media_we360_ai_requests": 55 },
+    { "label": "industry-edtech", "url": "https://www.we360.ai/industry/edtech/", "grade": "A", "score": 93, "page_size_mb": 2.0, "load_time_s": 1.24, "requests": 61, "image_pct_of_size": 90.84, "media_we360_ai_pct_of_size": 87.33, "media_we360_ai_requests": 30, "note": "single hero-edtech.svg is 358KB" },
+    { "label": "blog-15-productivity-hacks", "url": "https://www.we360.ai/blog/15-productivity-hacks-for-a-successful-2025/", "grade": "B", "score": 87, "page_size_kb": 910.9, "load_time_s": 1.83, "requests": 50, "image_pct_of_size": 81.15, "media_we360_ai_pct_of_size": 68.42, "note": "much lighter than solutions/industry/homepage templates; includes 1 external images.unsplash.com request" },
+    { "label": "integrations-monday", "url": "https://www.we360.ai/integrations/monday/", "grade": "A", "score": 95, "page_size_kb": 267.8, "load_time_s": 0.414, "requests": 33, "image_pct_of_size": 39.26, "media_we360_ai_pct_of_size": 4.30, "note": "lightest page tested — icon/integration page template, minimal images" }
+  ],
+  "cross_page_findings": [
+    "Total page weight scales with template type: homepage/solutions/alternative/industry pages (2-5MB, 87-96% images, dominated by media.we360.ai) vs. blog/integrations pages (0.3-0.9MB, much lighter).",
+    "media.we360.ai is the dominant weight source everywhere it's used — 30-70 image requests per heavy page, mostly below-the-fold content Lighthouse-based tools don't penalize as heavily since they focus on initial/LCP load.",
+    "Real Cache-Control on media assets confirmed at max-age=28800 (8h) via curl — matches PSI's cache-lifetime finding exactly."
+  ]
+}

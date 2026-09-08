@@ -1,0 +1,14 @@
+{
+  "tool": "CrUX Vis (cruxvis.withgoogle.com) — successor to the deprecated CrUX Dashboard",
+  "tested_environment": "production",
+  "tested_url": "https://www.we360.ai/ (URL-level view; the old CrUX Dashboard tool itself is fully decommissioned as of end of Nov 2025 per its own deprecation notice, confirmed 'Data Set Configuration Error' when attempted)",
+  "run_at": "2026-09-08T14:20:00+05:30",
+  "data_as_of": "2026-09-05",
+  "device": "phone",
+  "summary": {
+    "loading_performance_lcp": "Good and improving",
+    "interactivity_inp": "Good and improving",
+    "visual_stability_cls": "Good and stable"
+  },
+  "note": "Consistent with PSI's field data from Test 1 (mobile INP field p75 = 199ms, just under the 200ms 'Good' threshold). All three Core Web Vitals trending positively — no new task from this test, logged as a positive baseline confirmation for future comparison."
+}

@@ -1,0 +1,45 @@
+{
+  "tool": "WebPageTest (webpagetest.org, now Catchpoint-owned) — Desktop, Chrome v148, WiFi 240/120Mbps",
+  "tested_environment": "production",
+  "run_at": "2026-09-08T13:20:00+05:30",
+  "limitation": "Anonymous/free tier stopped accepting new tests after 3 runs in this session ('This is a limited view of WebPageTest. Create your free account to unlock the full experience.') — did not create an account (out of scope without explicit ask). Only 3 of the 6 assigned pages tested: homepage, solutions/time-tracking, alternative/hubstaff. industry/hr-and-staffing, blog/how-to-create-a-100-transparent-environment-2, and features/reports were NOT tested by this tool.",
+  "results": [
+    {
+      "label": "homepage",
+      "url": "https://www.we360.ai/",
+      "location": "Council Bluffs, Iowa, USA",
+      "fcp_s": 1.015, "lcp_s": 1.015, "cls": 0, "ttfb_s": 0.244, "start_render_s": 1, "speed_index_s": 1.07, "tbt_s": 0,
+      "qualitative": {
+        "quick": "Quick to connect and deliver initial code. Began rendering content very quickly. No render-blocking requests. Largest content rendered quickly.",
+        "usable": "Good layout stability. Little time to become interactive. Some HTML was generated after delivery, potentially delaying usability.",
+        "resilient": "No render-blocking 3rd party requests that could be a single point of failure. No security issues. Some HTML was generated after delivery, which can cause fragility."
+      }
+    },
+    {
+      "label": "solutions-time-tracking",
+      "url": "https://www.we360.ai/solutions/time-tracking/",
+      "location": "Columbus, Ohio, USA",
+      "fcp_s": 1.133, "lcp_s": 1.733, "cls": 0, "ttfb_s": 0.141, "start_render_s": 1.1, "speed_index_s": 1.252, "tbt_s": 0,
+      "accessibility_issues": { "total": 1, "critical": 1 },
+      "qualitative": {
+        "usable": "Good layout stability. It had 1 accessibility issue, 1 critical. Some HTML was generated after delivery, potentially delaying usability."
+      }
+    },
+    {
+      "label": "alternative-hubstaff",
+      "url": "https://www.we360.ai/alternative/hubstaff/",
+      "location": "Los Angeles, California, USA",
+      "fcp_s": 1.007, "lcp_s": 2.502, "cls": 0.009, "ttfb_s": 0.283, "start_render_s": 0.9, "speed_index_s": 1.114, "tbt_s": 0.098,
+      "accessibility_issues": { "total": 4, "critical": 2 },
+      "qualitative": {
+        "quick": "Quick to connect and deliver initial code. Began rendering content very quickly. No render-blocking requests. Largest content rendered a little late.",
+        "usable": "Good layout stability. Took little time to become interactive. Had 4 accessibility issues, 2 critical. Some HTML was generated after delivery, potentially delaying usability.",
+        "resilient": "Looks Great! No render-blocking 3rd party requests. No security issues. Some HTML was generated after delivery, which can cause fragility."
+      }
+    }
+  ],
+  "cross_page_findings": [
+    "All 3 tested pages: 'Some HTML was generated after delivery, which can cause fragility' — consistent hydration-timing note across every page (Astro islands pattern), informational not necessarily a bug.",
+    "Accessibility issue counts rise on /alternative/ pages specifically: homepage not flagged, solutions/time-tracking 1 issue (1 critical), alternative/hubstaff 4 issues (2 critical) — independently corroborates the existing ARIA-role task (which was based on /alternative/timechamp/ and /solutions/wfh-monitoring/ via PSI)."
+  ]
+}

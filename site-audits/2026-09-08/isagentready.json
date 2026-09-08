@@ -1,0 +1,27 @@
+{
+  "tool": "isagentready.com (by Bart Waardenburg) — AI Agent Readiness Scanner",
+  "tested_environment": "production",
+  "tested_url": "https://www.we360.ai/ (domain-level, homepage as representative)",
+  "run_at": "2026-09-08T14:08:00+05:30",
+  "overall_score": "74/100",
+  "grade": "B",
+  "checkpoints": { "total": 29, "passed": 21, "partial": 4, "failed": 4, "skipped": 12 },
+  "category_scores": {
+    "agent_protocols": { "weight": "15%", "score": 0, "note": "Not assessed — no score-impacting checkpoints yet (WebMCP, A2A Agent Card, MCP Discovery, OpenAPI, agents.json are all absent, but this category is bonus/emerging, not core-weighted)" },
+    "ai_content_discovery": { "weight": "30%", "score": 73, "note": "1 failed (XML Sitemap), 1 partial" },
+    "security_trust": { "weight": "15%", "score": 62, "note": "1 failed (Content-Security-Policy), 1 partial — matches securityheaders.com + Mozilla Observatory findings exactly" },
+    "content_semantics": { "weight": "20%", "score": 96, "note": "strongest category, 1 partial only" },
+    "ai_search_signals": { "weight": "20%", "score": 64, "note": "2 failed (incl. Entity linking @id), 1 partial" }
+  },
+  "priority_actions": [
+    { "check": "XML Sitemap", "status": "Failed", "impact": "+7 overall pts", "investigation": "Manually verified sitemap.xml is valid (application/xml, well-formed, ~640 URLs) and correctly referenced in robots.txt (Sitemap: https://www.we360.ai/sitemap.xml) — no obvious technical defect found. Could be a tool-side false positive/quirk, or checking for something not apparent from a basic curl inspection (e.g. sitemap index format, lastmod fields). Logged as needing verification rather than a confirmed root cause." },
+    { "check": "Content-Security-Policy", "status": "Failed", "impact": "+4 overall pts", "note": "Third independent tool confirming the missing CSP header (after securityheaders.com and Mozilla HTTP Observatory) — folded into the existing security-headers task." },
+    { "check": "Entity linking (@id)", "status": "Failed", "impact": "+3 overall pts", "note": "JSON-LD entities (Organization, SoftwareApplication) aren't cross-referenced via @id. Falls under the same 'sitewide schema' scope as the sheet's already-tracked structured-data ticket — not logged as a separate new task per existing guidance on staging-only fixes." }
+  ],
+  "ai_visitor_test": {
+    "disclaimer": "EXPERIMENTAL, DOES NOT AFFECT THE SCORE",
+    "can_ai_understand_site": { "result": "COULD NOT COMPLETE", "reason": "It could not understand the site's purpose and audience clearly enough." },
+    "can_ai_use_navigation": { "result": "COULD NOT COMPLETE", "reason": "It could not find and open a clear link." },
+    "note": "Notable qualitative signal but no concrete checkpoint/fix attached — flagged for awareness rather than drafted as a formal task."
+  }
+}

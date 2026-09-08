@@ -1,0 +1,37 @@
+{
+  "solutions": {
+    "pagespeed_insights": "https://www.we360.ai/solutions/wfh-monitoring/",
+    "pingdom": "https://www.we360.ai/solutions/project-management-software/",
+    "speedvitals": "https://www.we360.ai/solutions/capacity-planning-software/",
+    "webpagetest": "https://www.we360.ai/solutions/time-tracking/",
+    "schema_validator": "https://www.we360.ai/solutions/workforce-analytics/"
+  },
+  "alternative": {
+    "pagespeed_insights": "https://www.we360.ai/alternative/timechamp/",
+    "pingdom": "https://www.we360.ai/alternative/activtrak/",
+    "speedvitals": "https://www.we360.ai/alternative/desktime/",
+    "webpagetest": "https://www.we360.ai/alternative/hubstaff/",
+    "schema_validator": "https://www.we360.ai/alternative/insightful/"
+  },
+  "industry": {
+    "pagespeed_insights": "https://www.we360.ai/industry/digital-marketing-agency/",
+    "pingdom": "https://www.we360.ai/industry/edtech/",
+    "speedvitals": "https://www.we360.ai/industry/healthcare/",
+    "webpagetest": "https://www.we360.ai/industry/hr-and-staffing/",
+    "schema_validator": "https://www.we360.ai/industry/information-technology/"
+  },
+  "blog": {
+    "pagespeed_insights": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+    "pingdom": "https://www.we360.ai/blog/15-productivity-hacks-for-a-successful-2025/",
+    "speedvitals": "https://www.we360.ai/blog/unengaged-vs-disengaged-employees-key-difference/",
+    "webpagetest": "https://www.we360.ai/blog/how-to-create-a-100-transparent-environment-for-your-employees-2/",
+    "schema_validator": "https://www.we360.ai/blog/how-do-you-reduce-bench-time/"
+  },
+  "features": {
+    "pagespeed_insights": "https://www.we360.ai/features/project-task-management/",
+    "pingdom": "https://www.we360.ai/integrations/monday/",
+    "speedvitals": "https://www.we360.ai/features/attrition-risk/",
+    "webpagetest": "https://www.we360.ai/features/reports/",
+    "schema_validator": "https://www.we360.ai/features/domain-blocking/"
+  }
+}

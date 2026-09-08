@@ -1,0 +1,84 @@
+{
+  "tool": "SpeedVitals (speedvitals.com) — speed test + Core Web Vitals checker (one report covers both)",
+  "tested_environment": "production",
+  "run_at": "2026-09-08T12:42:00+05:30",
+  "test_config": "Mobile, South Carolina US, Lighthouse 12.8.2, Google Chrome, applied throttling",
+  "results": [
+    {
+      "label": "homepage",
+      "url": "https://www.we360.ai/",
+      "grade": "A", "score": 94, "size_kb": 393.7, "ttfb_ms": 87, "lcp_s": 2.1, "cls": 0.003, "tbt_ms": 258,
+      "lcp_element": "home-mobile-hero.svg (img, fetchpriority=high but no <link rel=preload>)",
+      "lcp_phases": { "ttfb_pct": 10, "load_delay_pct": 25, "load_time_pct": 46, "render_delay_pct": 19 },
+      "cls_source": "hero subtitle paragraph, shift 0.0025 (negligible)",
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 183.7 },
+        { "source": "www.we360.ai/", "type": "Style & layout", "ms": 74.6 }
+      ],
+      "field_data_mobile_28d": { "lcp_s": 2.1, "inp_ms": 199, "cls": 0, "ttfb_s": 1.4, "fcp_s": 2.0, "passes_cwv": true },
+      "field_data_desktop_28d": { "lcp_s": 1.2, "inp_ms": 82, "cls": 0.04, "ttfb_s": 0.586, "fcp_s": 1.1, "passes_cwv": true }
+    },
+    {
+      "label": "solutions-capacity-planning-software",
+      "url": "https://www.we360.ai/solutions/capacity-planning-software/",
+      "grade": "B", "score": 84, "size_kb": 1638.4, "ttfb_ms": 94, "lcp_s": 3.8, "cls": 0.067, "tbt_ms": 205,
+      "lcp_element": "Solution_Capacity Planning_Hero Icon-1.svg, 1336x450, ~1MB image weight, fetchpriority=high but no preload",
+      "lcp_phases": { "ttfb_pct": 5, "load_delay_pct": 14, "load_time_pct": 78, "render_delay_pct": 3 },
+      "cls_source": "hero subtitle paragraph, shift 0.067",
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 191.8 },
+        { "source": "page itself", "type": "Other", "ms": 13.2 }
+      ]
+    },
+    {
+      "label": "alternative-desktime",
+      "url": "https://www.we360.ai/alternative/desktime/",
+      "grade": "B", "score": 84, "size_kb": 214.4, "ttfb_ms": 82, "lcp_s": 1.2, "cls": 0.239, "tbt_ms": 222,
+      "lcp_element": "H1 heading text (render-delay dominated: 84% of LCP = 1.0s, likely web font blocking)",
+      "lcp_phases": { "ttfb_pct": 16, "load_delay_pct": 0, "load_time_pct": 0, "render_delay_pct": 84 },
+      "cls_source": "'LIVE - SWITCH IN PROGRESS DeskTime Premium -> We360.ai Pro / Saves $1,800/year' promo banner, shifts of 0.206 + 0.0334 = 0.239 total (borderline POOR, threshold is 0.25)",
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 183.1 },
+        { "source": "page itself", "type": "Style & layout", "ms": 38.6 }
+      ]
+    },
+    {
+      "label": "industry-healthcare",
+      "url": "https://www.we360.ai/industry/healthcare/",
+      "grade": "B", "score": 84, "size_kb": 559.9, "ttfb_ms": 84, "lcp_s": 4.1, "cls": 0.02, "tbt_ms": 194,
+      "lcp_element": "healthcare-hero.svg, 1205x529, fetchpriority=high but no preload",
+      "lcp_phases": { "ttfb_pct": 3, "load_delay_pct": 12, "load_time_pct": 81, "render_delay_pct": 4 },
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 164.5 },
+        { "source": "page itself", "type": "Other", "ms": 19.2 },
+        { "source": "Unattributable", "type": "Other", "ms": 10.5 }
+      ]
+    },
+    {
+      "label": "blog-unengaged-vs-disengaged",
+      "url": "https://www.we360.ai/blog/unengaged-vs-disengaged-employees-key-difference/",
+      "grade": "A", "score": 95, "size_kb": 394.4, "ttfb_ms": 80, "lcp_s": 1.1, "cls": 0, "tbt_ms": 248,
+      "lcp_element": "body paragraph text, 89% render-delay (996ms) — likely font-loading blocked",
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 140 },
+        { "source": "page itself", "type": "Other", "ms": 108.1 }
+      ]
+    },
+    {
+      "label": "features-attrition-risk",
+      "url": "https://www.we360.ai/features/attrition-risk/",
+      "grade": "A", "score": 95, "size_kb": 295.1, "ttfb_ms": 70, "lcp_s": 2.5, "cls": 0.003, "tbt_ms": 187,
+      "lcp_element": "Attrition.svg, 1304x531, fetchpriority=high but no preload",
+      "lcp_phases": { "ttfb_pct": 6, "load_delay_pct": 21, "load_time_pct": 67, "render_delay_pct": 5 },
+      "tbt_blocking_sources": [
+        { "source": "www.we360.ai/cdn-cgi/challenge-platform/scripts/precursor/...", "type": "Script evaluation", "ms": 150.5 },
+        { "source": "page itself", "type": "Other", "ms": 36.9 }
+      ]
+    }
+  ],
+  "cross_page_findings": [
+    "6/6 pages: Cloudflare cdn-cgi/challenge-platform script is the #1 TBT contributor (140-192ms of 187-258ms total) — not visible in PSI's summary audits.",
+    "5/6 pages (all except alternative-desktime, whose LCP is text): hero image is the LCP element with fetchpriority=high set but no explicit <link rel=preload> in <head>.",
+    "1/6 pages (alternative-desktime): CLS 0.239 (borderline POOR) from a promo banner — likely present on other /alternative/ pages too since it's a comparison-page template element."
+  ]
+}

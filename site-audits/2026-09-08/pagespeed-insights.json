@@ -1,0 +1,1991 @@
+{
+  "tool": "Google PageSpeed Insights (real API)",
+  "tested_environment": "production",
+  "run_at": "2026-09-08T06:40:16.154Z",
+  "raw_responses_dir": "pagespeed-raw/ (full Lighthouse JSON per page+device — screenshots, network-requests, all audits)",
+  "results": [
+    {
+      "label": "homepage",
+      "url": "https://www.we360.ai/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:06:35.231Z",
+      "scores": {
+        "performance": 93,
+        "seo": 100,
+        "accessibility": 97,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 2.552,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 1.986,
+        "speed_index_s": 4.158,
+        "ttfb_s": 0.027,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1398
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2035
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 199
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2097
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 11,
+      "failing_audits": [
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 189 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 94 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 118 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.78,
+          "display_value": "4.2 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.84,
+          "display_value": "2.0 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.88,
+          "display_value": "2.6 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.98,
+          "display_value": "2.6 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "homepage",
+      "url": "https://www.we360.ai/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:06:57.966Z",
+      "scores": {
+        "performance": 100,
+        "seo": 100,
+        "accessibility": 100,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 0.583,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 0.506,
+        "speed_index_s": 0.65,
+        "ttfb_s": 0.016,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 586
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1120
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 82
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1244
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 7,
+      "failing_audits": [
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 562 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "category": "performance",
+          "title": "LCP request discovery",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loading"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 438 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 29 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        }
+      ],
+      "final_url": "https://www.we360.ai/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "alternative-timechamp",
+      "url": "https://www.we360.ai/alternative/timechamp/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:33:21.086Z",
+      "scores": {
+        "performance": 95,
+        "seo": 100,
+        "accessibility": 92,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 2.169,
+        "cls": 0.03431848621069221,
+        "tbt_ms": 0,
+        "fcp_s": 2.073,
+        "speed_index_s": 4.146,
+        "ttfb_s": 0.024,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 11,
+      "failing_audits": [
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 64 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "aria-required-parent",
+          "category": "accessibility",
+          "title": "`[role]`s are not contained by their required parent element",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. ."
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 111 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.78,
+          "display_value": "4.1 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.82,
+          "display_value": "2.1 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.95,
+          "display_value": "2.2 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.99,
+          "display_value": "2.2 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/alternative/timechamp/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "alternative-timechamp",
+      "url": "https://www.we360.ai/alternative/timechamp/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:33:54.027Z",
+      "scores": {
+        "performance": 98,
+        "seo": 100,
+        "accessibility": 87,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 0.786,
+        "cls": 0.02595851229472602,
+        "tbt_ms": 43,
+        "fcp_s": 0.687,
+        "speed_index_s": 1.345,
+        "ttfb_s": 0.027,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 14,
+      "failing_audits": [
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "aria-required-parent",
+          "category": "accessibility",
+          "title": "`[role]`s are not contained by their required parent element",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "category": "performance",
+          "title": "LCP request discovery",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loading"
+        },
+        {
+          "id": "aria-required-children",
+          "category": "accessibility",
+          "title": "Elements with an ARIA `[role]` that require children to contain a specific `[role]` are missing some or all of those required children.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Some ARIA parent roles must contain specific child roles to perform their intended accessibility functions. ."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "max-potential-fid",
+          "category": "performance",
+          "title": "Max Potential First Input Delay",
+          "score": 0.38,
+          "display_value": "290 ms",
+          "savings_ms": null,
+          "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. ."
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 22 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0.5,
+          "display_value": "Est savings of 89 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.88,
+          "display_value": "1.3 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.98,
+          "display_value": "0.8 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.98,
+          "display_value": "0.7 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/alternative/timechamp/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "industry-digital-marketing-agency",
+      "url": "https://www.we360.ai/industry/digital-marketing-agency/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:34:29.707Z",
+      "scores": {
+        "performance": 74,
+        "seo": 100,
+        "accessibility": 97,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 7.244,
+        "cls": 0,
+        "tbt_ms": 8,
+        "fcp_s": 2.043,
+        "speed_index_s": 2.362,
+        "ttfb_s": 0.014,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 10,
+      "failing_audits": [
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 669 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.05,
+          "display_value": "7.2 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 121 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.5,
+          "display_value": "7.2 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.83,
+          "display_value": "2.0 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.98,
+          "display_value": "2.4 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/industry/digital-marketing-agency/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "industry-digital-marketing-agency",
+      "url": "https://www.we360.ai/industry/digital-marketing-agency/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:34:57.785Z",
+      "scores": {
+        "performance": 96,
+        "seo": 100,
+        "accessibility": 97,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 1.365,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 0.516,
+        "speed_index_s": 0.762,
+        "ttfb_s": 0.025,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 10,
+      "failing_audits": [
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 692 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 33 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.85,
+          "display_value": "1.4 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.99,
+          "display_value": "0.8 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.99,
+          "display_value": "1.4 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/industry/digital-marketing-agency/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "solutions-wfh-monitoring",
+      "url": "https://www.we360.ai/solutions/wfh-monitoring/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:37:47.481Z",
+      "scores": {
+        "performance": 94,
+        "seo": 100,
+        "accessibility": 89,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 2.702,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 1.988,
+        "speed_index_s": 2.669,
+        "ttfb_s": 0.016,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 11,
+      "failing_audits": [
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 974 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "aria-allowed-attr",
+          "category": "accessibility",
+          "title": "`[aria-*]` attributes do not match their roles",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Each ARIA `role` supports a specific subset of `aria-*` attributes. Mismatching these invalidates the `aria-*` attributes. ."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 120 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.84,
+          "display_value": "2.0 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.85,
+          "display_value": "2.7 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.97,
+          "display_value": "2.7 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.97,
+          "display_value": "2.7 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/solutions/wfh-monitoring/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "solutions-wfh-monitoring",
+      "url": "https://www.we360.ai/solutions/wfh-monitoring/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:38:09.599Z",
+      "scores": {
+        "performance": 100,
+        "seo": 100,
+        "accessibility": 94,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 0.682,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 0.504,
+        "speed_index_s": 0.623,
+        "ttfb_s": 0.016,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 8,
+      "failing_audits": [
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "aria-allowed-attr",
+          "category": "accessibility",
+          "title": "`[aria-*]` attributes do not match their roles",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Each ARIA `role` supports a specific subset of `aria-*` attributes. Mismatching these invalidates the `aria-*` attributes. ."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 1,060 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 67 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 33 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.99,
+          "display_value": "0.7 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        }
+      ],
+      "final_url": "https://www.we360.ai/solutions/wfh-monitoring/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "blog-top-5-hr-software-implementation-fails",
+      "url": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:38:33.304Z",
+      "scores": {
+        "performance": 95,
+        "seo": 100,
+        "accessibility": 94,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 2.327,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 1.821,
+        "speed_index_s": 3.965,
+        "ttfb_s": 0.006,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 12,
+      "failing_audits": [
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "heading-order",
+          "category": "accessibility",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 244 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 274 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 29 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.81,
+          "display_value": "4.0 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.89,
+          "display_value": "1.8 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.93,
+          "display_value": "2.3 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.99,
+          "display_value": "2.3 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "blog-top-5-hr-software-implementation-fails",
+      "url": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:39:30.576Z",
+      "scores": {
+        "performance": 90,
+        "seo": 100,
+        "accessibility": 94,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 0.671,
+        "cls": 0,
+        "tbt_ms": 41,
+        "fcp_s": 0.59,
+        "speed_index_s": 6.956,
+        "ttfb_s": 0.01,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 14,
+      "failing_audits": [
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0,
+          "display_value": "7.0 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "cls-culprits-insight",
+          "category": "performance",
+          "title": "Layout shift culprits",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Layout shifts occur when elements move absent any user interaction. , such as elements being added, removed, or their fonts changing as the page loads."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 351 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "heading-order",
+          "category": "accessibility",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. ."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "category": "performance",
+          "title": "LCP breakdown",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Each . Ideally, most of the LCP time should be spent on loading the resources, not within delays."
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 27 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 330 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "max-potential-fid",
+          "category": "performance",
+          "title": "Max Potential First Input Delay",
+          "score": 0.97,
+          "display_value": "100 ms",
+          "savings_ms": null,
+          "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.99,
+          "display_value": "0.6 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.99,
+          "display_value": "0.7 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        }
+      ],
+      "final_url": "https://www.we360.ai/blog/top-5-reasons-why-hr-software-implementation-fails-and-how-to-fix-them/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "features-project-task-management",
+      "url": "https://www.we360.ai/features/project-task-management/",
+      "strategy": "mobile",
+      "fetched_at": "2026-09-08T06:39:53.972Z",
+      "scores": {
+        "performance": 82,
+        "seo": 100,
+        "accessibility": 97,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 4.531,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 2.032,
+        "speed_index_s": 2.032,
+        "ttfb_s": 0.007,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 0
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "AVERAGE",
+          "p75": 1556
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "AVERAGE",
+          "p75": 2036
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 179
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 2110
+        }
+      },
+      "failing_audits_count": 10,
+      "failing_audits": [
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 333 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.36,
+          "display_value": "4.5 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 119 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 5 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "interactive",
+          "category": "performance",
+          "title": "Time to Interactive",
+          "score": 0.82,
+          "display_value": "4.5 s",
+          "savings_ms": null,
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. ."
+        },
+        {
+          "id": "first-contentful-paint",
+          "category": "performance",
+          "title": "First Contentful Paint",
+          "score": 0.83,
+          "display_value": "2.0 s",
+          "savings_ms": null,
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. ."
+        },
+        {
+          "id": "speed-index",
+          "category": "performance",
+          "title": "Speed Index",
+          "score": 0.99,
+          "display_value": "2.0 s",
+          "savings_ms": null,
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. ."
+        }
+      ],
+      "final_url": "https://www.we360.ai/features/project-task-management/",
+      "lighthouse_version": "13.4.1"
+    },
+    {
+      "label": "features-project-task-management",
+      "url": "https://www.we360.ai/features/project-task-management/",
+      "strategy": "desktop",
+      "fetched_at": "2026-09-08T06:40:16.120Z",
+      "scores": {
+        "performance": 99,
+        "seo": 100,
+        "accessibility": 97,
+        "best_practices": 100
+      },
+      "lab_metrics": {
+        "lcp_s": 0.905,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_s": 0.5,
+        "speed_index_s": 0.659,
+        "ttfb_s": 0.024,
+        "inp_ms": null
+      },
+      "field_data_url_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "field_data_origin_level": {
+        "CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+          "category": "FAST",
+          "p75": 4
+        },
+        "EXPERIMENTAL_TIME_TO_FIRST_BYTE": {
+          "category": "FAST",
+          "p75": 505
+        },
+        "FIRST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 954
+        },
+        "INTERACTION_TO_NEXT_PAINT": {
+          "category": "FAST",
+          "p75": 72
+        },
+        "LARGEST_CONTENTFUL_PAINT_MS": {
+          "category": "FAST",
+          "p75": 1189
+        }
+      },
+      "failing_audits_count": 9,
+      "failing_audits": [
+        {
+          "id": "color-contrast",
+          "category": "accessibility",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "Low-contrast text is difficult or impossible for many users to read. ."
+        },
+        {
+          "id": "cache-insight",
+          "category": "performance",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "display_value": "Est savings of 2,592 KiB",
+          "savings_ms": null,
+          "description": "A long cache lifetime can speed up repeat visits to your page. ."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "category": "performance",
+          "title": "Forced reflow",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as `offsetWidth`) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about  and possible mitigations."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "category": "performance",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display_value": null,
+          "savings_ms": null,
+          "description": " by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "image-delivery-insight",
+          "category": "performance",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. "
+        },
+        {
+          "id": "total-byte-weight",
+          "category": "performance",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "display_value": "Total size was 4,404 KiB",
+          "savings_ms": null,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. ."
+        },
+        {
+          "id": "unused-css-rules",
+          "category": "performance",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "display_value": "Est savings of 31 KiB",
+          "savings_ms": 0,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. ."
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "category": "performance",
+          "title": "Legacy JavaScript",
+          "score": 0.5,
+          "display_value": "Est savings of 11 KiB",
+          "savings_ms": null,
+          "description": "Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile  features, unless you know you must support older browsers. "
+        },
+        {
+          "id": "largest-contentful-paint",
+          "category": "performance",
+          "title": "Largest Contentful Paint",
+          "score": 0.96,
+          "display_value": "0.9 s",
+          "savings_ms": null,
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. "
+        }
+      ],
+      "final_url": "https://www.we360.ai/features/project-task-management/",
+      "lighthouse_version": "13.4.1"
+    }
+  ]
+}

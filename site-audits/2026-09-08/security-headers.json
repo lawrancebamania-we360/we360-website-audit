@@ -1,0 +1,33 @@
+{
+  "tool": "securityheaders.com + Mozilla HTTP Observatory (developer.mozilla.org/en-US/observatory)",
+  "tested_environment": "production",
+  "tested_url": "https://www.we360.ai/ (domain-level, homepage as representative)",
+  "run_at": "2026-09-08T14:00:00+05:30",
+  "results": {
+    "securityheaders_com": {
+      "grade": "B",
+      "present_headers": ["X-Content-Type-Options", "Referrer-Policy", "X-Frame-Options", "Strict-Transport-Security", "Content-Security-Policy (listed as present in summary but see note)", "Permissions-Policy (listed as present in summary but see note)"],
+      "missing_headers_flagged": ["Content-Security-Policy", "Permissions-Policy"],
+      "note_on_headers_list_discrepancy": "The summary 'Headers' line names CSP and Permissions-Policy, but the 'Missing Headers' section also lists both with descriptions and the raw headers dump below does NOT include either — treating both as genuinely missing based on the raw header dump and 'Missing Headers' section, which is the authoritative part of the report.",
+      "other_findings": [
+        "access-control-allow-origin: * flagged as 'a very lax CORS policy... should only be used on a public CDN'",
+        "expect-ct header present but flagged as deprecated, recommended for removal",
+        "Upcoming (lower priority) headers also missing: Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy"
+      ],
+      "raw_headers_confirmed": {
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-frame-options": "SAMEORIGIN",
+        "referrer-policy": "same-origin",
+        "x-content-type-options": "nosniff",
+        "content-encoding": "gzip",
+        "server": "cloudflare"
+      }
+    },
+    "mozilla_http_observatory": {
+      "grade": "B",
+      "score": "75/100",
+      "tests_passed": "11/12",
+      "note": "Table detail (which specific test failed, and its recommendation) could not be extracted from the rendered page within this session's tool budget — grade/score is directionally consistent with securityheaders.com's missing-CSP finding, which is almost certainly the single failed test here too since CSP carries the heaviest weight in Mozilla's scoring model."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tool": "Google Rich Results Test (search.google.com/test/rich-results) — used instead of schema-validator.org, which the Browser pane could not reach",
+  "tested_environment": "production",
+  "run_at": "2026-09-08T13:50:00+05:30",
+  "note": "All 6 pages match the sheet's already-tracked 'Structured-data validation error (sitewide schema)' ticket (marked Done) — confirms that fix has not reached production yet, consistent with the redirect-loop finding earlier. Not logged as a new task per user guidance (staging-only fixes aren't new regressions).",
+  "results": [
+    { "label": "homepage", "url": "https://www.we360.ai/", "valid_items": 2, "types": ["Organization (non-critical: missing optional postalCode)", "SoftwareApplication (non-critical: missing optional offers, aggregateRating)"] },
+    { "label": "solutions-workforce-analytics", "url": "https://www.we360.ai/solutions/workforce-analytics/", "valid_items": 2, "types": ["Organization (non-critical issues)", "SoftwareApplication (non-critical issues)"] },
+    { "label": "alternative-insightful", "url": "https://www.we360.ai/alternative/insightful/", "valid_items": 2, "types": ["Organization (non-critical issues)", "SoftwareApplication (non-critical issues)"] },
+    { "label": "industry-information-technology", "url": "https://www.we360.ai/industry/information-technology/", "valid_items": 2, "types": ["Organization (non-critical issues)", "SoftwareApplication (non-critical issues)"] },
+    { "label": "blog-how-do-you-reduce-bench-time", "url": "https://www.we360.ai/blog/how-do-you-reduce-bench-time/", "valid_items": 3, "types": ["Article (clean, no issues)", "Organization (non-critical issues)", "SoftwareApplication (non-critical issues)"], "note": "Article schema is clean on this post — worth spot-checking a few more posts for consistency" },
+    { "label": "features-domain-blocking", "url": "https://www.we360.ai/features/domain-blocking/", "valid_items": 2, "types": ["Organization (non-critical issues)", "SoftwareApplication (non-critical issues)"] }
+  ],
+  "homepage_full_organization_schema_notes": "Organization schema is otherwise comprehensive: name, alternateName x2, url, logo, description, foundingDate, areaServed x5, knowsAbout x8, full PostalAddress, 14 sameAs links (LinkedIn, YouTube, Instagram, X, Facebook, Medium, Crunchbase, Tracxn, ProductHunt, BuiltIn, HackerNoon, G2, Capterra, GetApp, Gartner), 2 founder Person entries with their own sameAs links. Only gap: postalCode field on the address."
+}
